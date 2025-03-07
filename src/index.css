@@ -1,1 +1,77 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Font Family */
+  --font-inter: "Inter", "sans-serif";
+  /* Color Blue 900~100 */
+  --color-b-900: #4078ff;
+  --color-b-800: #5c83ff;
+  --color-b-700: #728fff;
+  --color-b-600: #869aff;
+  --color-b-500: #97a6ff;
+  --color-b-400: #a8b2ff;
+  --color-b-300: #b7bfff;
+  --color-b-200: #e3e5ff;
+  --color-b-100: #f0f1ff;
+  /* Color Black 900~100 */
+  --color-bl-900: #0e1422;
+  --color-bl-800: #202533;
+  --color-bl-700: #333845;
+  --color-bl-600: #474b57;
+  --color-bl-500: #5c5f6a;
+  --color-bl-400: #71747e;
+  --color-bl-300: #878a92;
+  --color-bl-200: #b6b7bc;
+  --color-bl-100: #e6e7e8;
+  /* Color White 200 / 100 / 900 */
+  --color-w-900: #ffffff;
+  --color-w-200: #e9e9eb;
+  --color-w-100: #f6f6f6;
+  /* Color Green 900~100 */
+  --color-g-900: #057234;
+  --color-g-800: #2c7f45;
+  --color-g-700: #458b56;
+  --color-g-600: #5a9868;
+  --color-g-500: #6fa479;
+  --color-g-400: #83b18b;
+  --color-g-300: #98be9e;
+  --color-g-200: #c1d8c4;
+  --color-g-100: #d5e5d7;
+  /* Color Red 900~100 */
+  --color-r-900: #be1313;
+  --color-r-800: #c83727;
+  --color-r-700: #d14f3a;
+  --color-r-600: #d9644e;
+  --color-r-500: #e17862;
+  --color-r-400: #e88c77;
+  --color-r-300: #ee9f8d;
+  --color-r-200: #f8c5b9;
+  --color-r-100: #fbd9d0;
+  /* Color Yellow 900~100 */
+  --color-y-900: #f3b40a;
+  --color-y-800: #f6bb33;
+  --color-y-700: #f9c14c;
+  --color-y-600: #fbc862;
+  --color-y-500: #fdcf76;
+  --color-y-400: #ffd58a;
+  --color-y-300: #ffdc9e;
+  --color-y-200: #ffeac4;
+  --color-y-100: #fff1d8;
+  /* Extra */
+  --color-gr-100:#5C5F6A;
+  /* Font Sizes */
+  /* Heading */
+  --text-H1: 40px;
+  --text-H2: 32px;
+  --text-H3: 24px;
+  --text-H4: 18px;
+  --text-H5: 16px;
+  --text-H6: 14px;
+  /* Body */
+  --text-P1: 14px;
+  /* Label */
+  --text-L1: 12px;
+}
+@layer {
+}
