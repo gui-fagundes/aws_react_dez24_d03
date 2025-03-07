@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="h-32 flex flex-col items-center m-0 p-0 overflow-hidden">
+    <div className="h-32 flex flex-col items-center m-0 p-0 overflow-hidden fixed">
       <div className="min-h-10 min-w-full bg-black text-white text-center pt-2">
         <h1>
           Get 25% OFF on your first order.{" "}

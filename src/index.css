@@ -72,6 +72,8 @@
   --text-P1: 14px;
   /* Label */
   --text-L1: 12px;
+  /* Sizes */
+  --w-button: 183px
 }
 @layer {
 }
