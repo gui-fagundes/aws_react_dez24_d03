@@ -1,10 +1,91 @@
+import { Link, useNavigate } from "react-router-dom";
+import BreadCrumbs from "../components/BreadCrumbs";
+import { FormEvent, useEffect, useState } from "react";
+import { GoogleOneTap, useSignIn, useUser } from "@clerk/clerk-react";
 
 const Login = () => {
-  return (
-    <div>
-      <h1>login</h1>
-    </div>
-  )
-}
+  const {signIn, setActive} = useSignIn()
+  const { isSignedIn } = useUser();
+  const navigate = useNavigate();
+  const [isLoading, setLoading] = useState(false)
+  
+  const [userEmail, setEmail] = useState("");
+  const [userPassword, setPassword] = useState("");
 
-export default Login
+
+
+  const handleLogin = async (e: FormEvent) => {
+    e.preventDefault();
+    const emailAddress = userEmail
+    const password = userPassword
+    try {
+      const signInResource = await signIn?.create({
+        identifier: emailAddress,
+        password,
+      });
+
+      if (signInResource?.status === "complete") {
+        await setActive?.({ session: signInResource.createdSessionId });
+        navigate("/");
+      }
+    } catch (error: any) {
+      if (error?.errors?.[0]?.code === "session_exists") {
+        navigate("/");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isSignedIn) {
+      navigate("/");
+    }
+  }, [isSignedIn, navigate]);
+  return (
+    <div className="flex flex-col items-center">
+      <BreadCrumbs currentPage={"Login"} />
+      <div className="w-80 h-111 flex flex-col gap-3">
+        <button className="h-11">
+          <GoogleOneTap />
+        </button>
+        <form
+          onSubmit={(e) => handleLogin(e)}
+          action=""
+          className="flex flex-col gap-3"
+        >
+          <label htmlFor="email">Email</label>
+          <input
+            type="text"
+            id="email"
+            placeholder="Your Email"
+            className=" border-1 border-bl-100 rounded-md px-2 h-11"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="password"
+            className=" border-1 border-bl-100 rounded-md px-2 h-11"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Link to={"/recover"} className="self-end">
+            Forgot Password?
+          </Link>
+          <button
+            type="submit"
+            className="bg-bl-900 h-11 rounded-md cursor-pointer text-center text-w-900"
+          >
+            Login
+          </button>
+        </form>
+        <Link to={"/register"} className="text-center">
+          Don't have an account? Sign Up
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default Login;
