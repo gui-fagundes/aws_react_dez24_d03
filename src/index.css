@@ -62,16 +62,16 @@
   --color-gr-100:#5C5F6A;
   /* Font Sizes */
   /* Heading */
-  --text-H1: 40px;
-  --text-H2: 32px;
-  --text-H3: 24px;
-  --text-H4: 18px;
-  --text-H5: 16px;
-  --text-H6: 14px;
+  --text-h1: 40px;
+  --text-h2: 32px;
+  --text-h3: 24px;
+  --text-h4: 18px;
+  --text-h5: 16px;
+  --text-h6: 14px;
   /* Body */
-  --text-P1: 14px;
+  --text-p1: 14px;
   /* Label */
-  --text-L1: 12px;
+  --text-l1: 12px;
   /* Sizes */
   --w-button: 183px
 }
