@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import BreadCrumbs from "../components/BreadCrumbs";
-import {SignedIn, SignedOut} from "@clerk/clerk-react";
 
 const Checkout = () => {
   return (
@@ -81,7 +80,7 @@ const Checkout = () => {
           </form>
         </div>
         <div className="max-w-93 h-126 flex flex-col gap-3 justify-around">
-          <div className=" placeselfst">
+          <div className="">
             <h1>Your Order</h1>
           </div>
           <div className="flex flex-col gap-3">
@@ -92,7 +91,6 @@ const Checkout = () => {
             <hr />
             <div className="flex flex-row justify-between">Total</div>
             <div>
-              <SignedIn>
                 <Link
                   to={"/sucessfullOrder"}
                   className={
@@ -101,17 +99,6 @@ const Checkout = () => {
                 >
                   Place Order
                 </Link>
-              </SignedIn>
-              <SignedOut>
-                <Link
-                  to={"/login"}
-                  className={
-                    "flex flex-row grow-0 flex-nowrap justify-center font-medium text-p1 font-inter bg-bl-900 text-w-900 rounded-sm w-93 h-11 place-content-center px-4 py-2"
-                  }
-                >
-                  Log in to Place Order
-                </Link>
-              </SignedOut>
             </div>
           </div>
         </div>
