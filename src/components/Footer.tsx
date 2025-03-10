@@ -1,16 +1,27 @@
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div className="h-[629px] bg-white flex flex-col flex-nowrap justify-between">
       <div className="bg-[#f6f6f6] h-[200px] flex flex-row justify-around items-center">
-      <div className="flex flex-col flex-nowrap gap-3">
-      <h1 className="font-inter font-bold text-2xl tex-bl-900">Join Our Newsletter</h1>
-      <p className="font-inter font-normal text-sm text-gr-100">We love to surprise our subscrivers with occasional gifts.</p>
-      </div>
-      <div className="flex flex-row flex-nowrap gap-3 font-inter text-sm">
-      <input className="bg-white border-1 border-gr-100 rounded-md h-[45px] w-[320] px-4 py-2" type="email" placeholder="Your email address"/>
-      <button className="text-w-900 bg-bl-900 font-medium font-inter text-P1 text-center px-4 py-2 rounded-md h-[45px] w-[116px]">Subscribe</button>
-      </div>
+        <div className="flex flex-col flex-nowrap gap-3">
+          <h1 className="font-inter font-bold text-2xl tex-bl-900">
+            Join Our Newsletter
+          </h1>
+          <p className="font-inter font-normal text-sm text-gr-100">
+            We love to surprise our subscrivers with occasional gifts.
+          </p>
+        </div>
+        <div className="flex flex-row flex-nowrap gap-3 font-inter text-sm">
+          <input
+            className="bg-white border-1 border-gr-100 rounded-md h-[45px] w-[320] px-4 py-2"
+            type="email"
+            placeholder="Your email address"
+          />
+          <button className="text-w-900 bg-bl-900 font-medium font-inter text-P1 text-center px-4 py-2 rounded-md h-[45px] w-[116px]">
+            Subscribe
+          </button>
+        </div>
       </div>
       <div className="flex flex-row justify-evenly">
         <div className="flex flex-col gap-4 pt-8">
@@ -25,13 +36,13 @@ const Footer = () => {
           </div>
           <div className="flex flex-row gap-3">
             <a href="http://github.com" target="blank">
-            <img src="/src/icons/Github.png" alt="Github link" />
+              <img src="/src/icons/Github.png" alt="Github link" />
             </a>
             <a href="http://instagram.com" target="blank">
-            <img src="/src/icons/Instagram.png" alt="Instagram link" />
+              <img src="/src/icons/Instagram.png" alt="Instagram link" />
             </a>
             <a href="http://youtube.com" target="blank">
-            <img src="/src/icons/Youtube.png" alt="Youtube link" />
+              <img src="/src/icons/Youtube.png" alt="Youtube link" />
             </a>
           </div>
         </div>
@@ -55,7 +66,9 @@ const Footer = () => {
           <div className="flex flex-col gap-10 text-bl-300 text-P1 font-medium">
             SHOP
             <ul className="flex flex-col gap-3 text-bl-500 ">
-              <li>My Account</li>
+              <li>
+                <NavLink to={"/myaccount"}>My Account</NavLink>
+              </li>
               <li>Checkout</li>
               <li>Cart</li>
             </ul>
@@ -70,7 +83,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-center place-content-center text-bl-500 border-t-1 border-w-100 h-[79px]">© 2023 DevCut. All rights reserved.</div>
+      <div className="text-center place-content-center text-bl-500 border-t-1 border-w-100 h-[79px]">
+        © 2023 DevCut. All rights reserved.
+      </div>
     </div>
   );
 };
