@@ -1,14 +1,22 @@
 {
-    "Products": [
-        {
-            "id":"1",
-            "title":"Camiseta Preta"
-        }
-    ],
-    "NewsLetter":[
-
-    ],
-    "OrderHistory":[
-
-    ]
+  "Products": [
+    {
+      "id": "1",
+      "title": "Black T-Shirt",
+      "imagesUrl": [],
+      "price": 140,
+      "inStock": true,
+      "colors": [],
+      "sizes": [],
+      "tag": "shirt",
+      "category":"shirt"
+    }
+  ],
+  "NewsLetter": [
+    {
+      "id": "1",
+      "email": "testemail@email.com"
+    }
+  ],
+  "OrderHistory": []
 }

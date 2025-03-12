@@ -1,18 +1,42 @@
-import BreadCrumbs from '../components/BreadCrumbs'
+import { useState } from "react";
+import BreadCrumbs from "../components/BreadCrumbs";
+import {useAuth} from "@clerk/clerk-react"
+import { useNavigate } from "react-router-dom";
 
 const UserAccount = () => {
+  const [activeSection, setActiveSection] = useState("");
+  const { signOut } = useAuth(); 
+  const navigate = useNavigate()
+
+  const handleSignOut = () => {
+    signOut()
+    navigate('/')
+  }
+
   return (
-    <div className='flex flex-col'>
-      <BreadCrumbs currentPage='My Account' />
-      <div className='flex flex-col md:flex-row flex-nowrap gap-3 justify-start items-center px-40'>
-        <div className='flex flex-col gap-3 md:border-r-1 border-w-200 h-125 w-60 items-center pt-20'>
-            <div className='h-10 bg-bl-900 w-10'></div>
-            <div className='h-10 bg-bl-900 w-10'></div>
-            <div className='h-10 bg-bl-900 w-10'></div>
+    <div className="flex flex-col">
+      <BreadCrumbs currentPage="My Account" />
+      <div className="flex flex-col md:flex-row flex-nowrap gap-3 justify-start items-center px-40">
+        <div className="flex flex-col gap-3 md:border-r-1 border-w-200 h-125 w-60 items-center pt-20 my-10">
+          <div
+            className="h-10 w-30 text-p1 font-inter font-medium text-bl-900 cursor-pointer"
+            onClick={() => setActiveSection("orders")}
+          >
+            Orders
+          </div>
+          <div className="h-10  w-30 text-p1 font-inter font-medium text-bl-900 cursor-pointer"
+          onClick={() => setActiveSection("accountDetails")}>
+            Account Details
+          </div>
+          <div className="h-10  w-30 text-p1 font-inter font-medium text-bl-900 cursor-pointer"
+          onClick={() => handleSignOut()}>
+            Log Out
+          </div>
         </div>
+        <div></div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default UserAccount
+export default UserAccount;

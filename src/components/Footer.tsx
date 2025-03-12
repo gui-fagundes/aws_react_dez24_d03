@@ -1,6 +1,23 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import api from "../services/api";
 
 const Footer = () => {
+  const [newsLetterEmail, setNewsLetterEmail] = useState('')
+  
+  
+  
+  
+  const handleNewsLetterSubmit = (e) => {
+    e.preventDefault()
+    if(!newsLetterEmail) return
+
+    api.post(`/NewsLetter`,{
+      email:newsLetterEmail
+    })
+
+
+  }
   return (
     <div className="h-[629px] bg-white flex flex-col flex-nowrap justify-between">
       <div className="bg-[#f6f6f6] h-[200px] flex flex-row justify-around items-center">
@@ -17,8 +34,10 @@ const Footer = () => {
             className="bg-white border-1 border-gr-100 rounded-md h-[45px] w-[320] px-4 py-2"
             type="email"
             placeholder="Your email address"
+            onChange={(e) => setNewsLetterEmail(e.target.value)}
           />
-          <button className="text-w-900 bg-bl-900 font-medium font-inter text-P1 text-center px-4 py-2 rounded-md h-[45px] w-[116px]">
+          <button className="text-w-900 bg-bl-900 font-medium font-inter text-P1 text-center px-4 py-2 rounded-md h-[45px] w-[116px]"
+          onClick={(e) => handleNewsLetterSubmit(e)}>
             Subscribe
           </button>
         </div>

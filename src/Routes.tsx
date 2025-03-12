@@ -2,12 +2,14 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Products from "./Pages/Products";
+import ProductDetail from "./Pages/ProductDetail";
 import Register from "./Pages/Register";
 import PasswordReset from "./Pages/PasswordReset";
 import UserAccount from "./Pages/UserAccount";
 import SucessfullOrder from "./Pages/SucessfullOrder";
 import Checkout from "./Pages/Checkout";
 import Cart from "./Pages/Cart";
+import Page403 from "./Pages/Page403";
 
 export const Routers = () => {
   return (
@@ -15,13 +17,15 @@ export const Routers = () => {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/products" element={<Products />} />
+      <Route path="/products/detail" element={<ProductDetail />} />
       <Route path="/register" element={<Register />} />
       <Route path="/recover" element={<PasswordReset />} />
       <Route path="/myaccount" element={<UserAccount />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/sucessfullOrder" element={<SucessfullOrder />} />
-
+      
+      <Route path="/403" element={<Page403 />} />
     </Routes>
   );
 };

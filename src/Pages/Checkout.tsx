@@ -16,11 +16,9 @@ const Checkout = () => {
     if (!e.target.value) return;
     const cep = e.target.value;
     const consulta = `https://viacep.com.br/ws/${cep}/json/`;
-    console.log(cep);
     fetch(consulta)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setStreetAddress(data.logradouro)
         setCity(data.localidade)
         setCountry("Brazil")
