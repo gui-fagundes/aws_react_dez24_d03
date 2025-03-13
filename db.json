@@ -1,21 +1,26 @@
 {
   "Products": [
     {
-      "id": "1",
+      "id": 1,
       "title": "Black T-Shirt",
+      "description":"",
       "imagesUrl": [],
       "price": 140,
       "inStock": true,
       "colors": [],
       "sizes": [],
       "tag": "shirt",
-      "category":"shirt"
+      "category": "shirt"
     }
   ],
   "NewsLetter": [
     {
-      "id": "1",
+      "id": 1,
       "email": "testemail@email.com"
+    },
+    {
+      "id": 2,
+      "email": "ABLABLUBLUE@BLUBLE.COM"
     }
   ],
   "OrderHistory": []

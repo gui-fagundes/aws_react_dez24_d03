@@ -83,7 +83,7 @@ const Home = () => {
         </div>
       </div>
       <div className="flex flex-col gap-4 mt-10 items-center px-25">
-            <h1 className="font-inter text-L1 font-medium text-bl-300">On Sale</h1>
+            <h1 className="font-inter text-p1 font-medium text-bl-800 rounded-md bg-w-200">On Offer</h1>
             <Cards />
       </div>
     </div>
