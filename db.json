@@ -3,15 +3,42 @@
     {
       "id": 1,
       "title": "Black T-Shirt",
-      "description":"",
-      "imagesUrl": [],
+      "description":"Black T-Shirt",
+      "imagesUrl": ["/src/assets/black-shirt.png"],
       "price": 140,
       "inStock": true,
-      "colors": [],
-      "sizes": [],
+      "colors": ["black", "gray"],
+      "sizes": ["S", "M", "X", "XL"],
       "tag": "shirt",
       "category": "shirt"
-    }
+    },
+    
+      {
+        "id":2,
+        "title": "Camiseta Preta",
+        "description": "A melhor camisa preta das camisas pretas",
+        "imagesUrl": ["/src/assets/black-shirt.png"],
+        "price": 199,
+        "inStock": true,
+        "colors": ["black", "yellow"],
+        "sizes": ["S", "M", "X"],
+        "tag":"shirt",
+        "category":"shirt"
+
+      },
+      {
+        "id": 3,
+        "title": "Black T-T-Shirt",
+        "description":"Black T-Shirt",
+        "imagesUrl": ["/src/assets/black-shirt.png"],
+        "price": 250,
+        "inStock": false,
+        "colors": ["black", "gray"],
+        "sizes": ["S", "M", "X", "XL"],
+        "tag": "shirt",
+        "category": "shirt"
+      }
+    
   ],
   "NewsLetter": [
     {
