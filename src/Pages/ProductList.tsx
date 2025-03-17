@@ -21,7 +21,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await api.get("/Products");
+        const response = await api.get("/products");
         setProducts(response.data);
       } catch (error) {
         console.error(error);
@@ -53,14 +53,7 @@ const ProductList = () => {
           <div className="flex flex-row justify-start gap-2 flex-wrap">
           {products.map((product) =>  { 
             return(
-              <Card
-              productImage={product.imagesUrl[0]}
-              title={product.title}
-              price={product.price}
-              category={product.category}
-              className={""}
-              id={product.id}
-              inStock={product.inStock}
+              <Card product={product}
               />)
             })}
             </div>

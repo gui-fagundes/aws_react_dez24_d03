@@ -1,16 +1,36 @@
+import { useEffect, useState } from "react";
 import BreadCrumbs from "../components/BreadCrumbs";
 import Cards from "../components/Cards";
+import api from "../services/api";
 
 const ProductDetail = () => {
-  const product = {
-    title: "Camiseta Preta",
-    price: 199,
-    description: "A melhor camisa preta das camisas pretas",
-    imagesUrl: ["/src/assets/black-shirt.png"],
-    sizes: ["S", "M", "X"],
-    colors: ["black", "yellow"],
-    inStock: true,
-  };
+  const [count, setCount] = useState(1)
+
+  const current = location.pathname
+
+  const [product, setProducts] =  useState({
+    id: "",
+    title: "",
+    description:"",
+    imagesUrl: [],
+    price: "",
+    inStock: false,
+    colors: [],
+    sizes: [],
+    tag: "",
+    category: ""
+  });
+
+  useEffect(() =>  {
+     api.get(current).then(response => {
+      setProducts(response.data)
+    })
+  },[])
+
+  const handleAddToCart = () => {
+    
+  }
+
   return (
     <div className="flex flex-col justify-center items-center">
       <BreadCrumbs currentPage={product.title} />
@@ -51,12 +71,15 @@ const ProductDetail = () => {
             </div>
             <h1 className="font-inter font-medium text-l1 text-bl-500">Quantity</h1>
             <div className="flex justify-between w-41 h-11 border-1 border-bl-100 items-center rounded-md">
-              <div className="cursor-pointer w-8 h-11 content-center text-center">-</div>
-              <div>1</div>
-              <div className="cursor-pointer w-8 h-11 content-center text-center">+</div>
+              <div className="cursor-pointer w-8 h-11 content-center text-center"
+              onClick={() => setCount(count - 1)}>-</div>
+              <div>{count}</div>
+              <div className="cursor-pointer w-8 h-11 content-center text-center"
+              onClick={() => setCount(count + 1)}>+</div>
             </div>
 
-            <div className="rounded-md bg-bl-900 text-w-900 w-62 h-11 cursor-pointer text-center content-center">
+            <div className="rounded-md bg-bl-900 text-w-900 w-62 h-11 cursor-pointer text-center content-center"
+            onClick={() => handleAddToCart()}>
               Add to Cart
             </div>
             <h1 className="font-inter font-medium text-bl-500 text-l1">— Free shipping on orders $100 +</h1>
