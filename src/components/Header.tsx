@@ -1,13 +1,11 @@
-import {
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/clerk-react";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import { NavLink } from "react-router-dom";
+import { useAppSelector } from "../store";
 
 const Header = () => {
+  const count = useAppSelector((state) => state.cart.count);
   return (
-    <div className="h-32 flex flex-col items-center m-0 p-0 overflow-hidden fixed">
+    <div className="h-32 flex flex-col items-center m-0 p-0 overflow-hidden fixed z-100">
       <div className="min-h-10 min-w-full bg-black text-white text-center pt-2">
         <h1>
           Get 25% OFF on your first order.{" "}
@@ -35,7 +33,14 @@ const Header = () => {
 
         <div className="flex flex-row gap-5">
           <NavLink to={"/cart"}>
-            <img src="/src/icons/CartIcon.png" alt="" />
+            <button className="cursor-pointer relative">
+              <img src="/src/icons/CartIcon.png" alt="" />
+              {count > 0 && (
+                <span className="bg-red-600 text-w-900 text-xs font-inter absolute rounded-full flex items-center justify-center -bottom-2 -right-2 w-4 h-4">
+                  {count}
+                </span>
+              )}
+            </button>
           </NavLink>
           <SignedOut>
             <NavLink to={"/login"}>

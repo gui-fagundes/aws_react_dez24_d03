@@ -3,10 +3,21 @@ import { SignedIn, SignedOut } from "@clerk/clerk-react";
 import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store";
 import { CartSlice } from "../store/cart/cartSlice";
+import { useEffect, useState } from "react";
 
 const Cart = () => {
   const dispatch = useAppDispatch();
   const products = useAppSelector((state) => state.cart.items);
+  const orderSubTotal = useAppSelector((state) => state.cart.subTotal)
+  const [tax, setTaxes] = useState((orderSubTotal*0.05))
+
+
+  useEffect(() => {
+    setTaxes((orderSubTotal*0.05))
+    return
+  }, [orderSubTotal]);
+  
+  
 
   return (
     <div className="flex flex-col gap-3 w-screen">
@@ -70,11 +81,18 @@ const Cart = () => {
           </div>
           <div className="flex flex-col gap-3">
             <div className="flex flex-row justify-between">Edit Cart</div>
-            <div className="flex flex-row justify-between">Subtotal</div>
-            <div className="flex flex-row justify-between">Shipping</div>
-            <div className="flex flex-row justify-between">Tax</div>
+            <div className="flex flex-row justify-between">
+              <h1>Subtotal</h1>
+              <h1>{`R$ ${orderSubTotal.toFixed(2)}`}</h1></div>
+            <div className="flex flex-row justify-between">
+              <h1>Shipping</h1>
+              <h1>Free</h1>
+            </div>
+            <div className="flex flex-row justify-between"><h1>Tax</h1>
+            <h1>{`R$ ${tax.toFixed(2)}`}</h1></div>
             <hr />
-            <div className="flex flex-row justify-between">Total</div>
+            <div className="flex flex-row justify-between"><h1>Total</h1>
+            <h1>{`R$ ${(tax + orderSubTotal).toFixed(2)}`}</h1></div>
             <div>
               <SignedIn>
                 <Link

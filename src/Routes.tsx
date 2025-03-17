@@ -10,6 +10,7 @@ import Checkout from "./Pages/Checkout";
 import Cart from "./Pages/Cart";
 import Page403 from "./Pages/Page403";
 import ProductList from "./Pages/ProductList";
+import About from "./Pages/About";
 
 export const Routers = () => {
   return (
@@ -24,6 +25,7 @@ export const Routers = () => {
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/sucessfullOrder" element={<SucessfullOrder />} />
+      <Route path="/about" element = {<About />} />
       
       <Route path="/403" element={<Page403 />} />
     </Routes>
