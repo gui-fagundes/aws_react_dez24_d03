@@ -4,7 +4,7 @@ type CardProps = {
   product: {
     imagesUrl: string[];
     title: string;
-    price: string;
+    price: number;
     category: string;
     id: string;
     inStock: boolean;
@@ -36,7 +36,7 @@ const Card = ({ product }: CardProps) => {
           {product.inStock ? "IN STOCK" : "NO STOCK"}
         </div>
         <p className="text-slate-500 text-base dark:text-white text-center self-center">
-          ${parseFloat(product.price).toFixed(2)}
+          ${product.price}
         </p>
       </div>
     </div>

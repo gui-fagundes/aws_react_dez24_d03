@@ -53,7 +53,7 @@ const ProductList = () => {
           <div className="flex flex-row justify-start gap-2 flex-wrap">
           {products.map((product) =>  { 
             return(
-              <Card product={product}
+              <Card product={product} key={product.id}
               />)
             })}
             </div>
