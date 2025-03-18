@@ -69,17 +69,17 @@ const Footer = () => {
           <div className="flex flex-col gap-10 text-bl-300 text-P1 font-medium">
             SUPPORT
             <ul className="flex flex-col gap-3 text-bl-500">
-              <li>FAQ</li>
-              <li>Terms of Use</li>
-              <li>Privacy Policy</li>
+              <li><NavLink to={"/Page404"}>FAQ</NavLink></li>
+              <li><NavLink to={"/Page404"}>Terms of Use</NavLink></li>
+              <li><NavLink to={"/Page404"}>Privacy Policy</NavLink></li>
             </ul>
           </div>
           <div className="flex flex-col gap-10 text-bl-300 text-P1 font-medium">
             COMPANY
             <ul className="flex flex-col gap-3 text-bl-500">
-              <li>About Us</li>
-              <li>Contact</li>
-              <li>Careers</li>
+              <li><NavLink to={"/About"}>About Us</NavLink></li>
+              <li><NavLink to={"/Page404"}>Contact</NavLink></li>
+              <li><NavLink to={"/Page404"}>Carreers</NavLink></li>
             </ul>
           </div>
           <div className="flex flex-col gap-10 text-bl-300 text-P1 font-medium">
@@ -88,8 +88,8 @@ const Footer = () => {
               <li>
                 <NavLink to={"/myaccount"}>My Account</NavLink>
               </li>
-              <li>Checkout</li>
-              <li>Cart</li>
+              <li><NavLink to={"/checkout"}>Checkout</NavLink></li>
+              <li><NavLink to={"/cart"}>Cart</NavLink></li>
             </ul>
           </div>
         </div>
@@ -103,7 +103,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-center place-content-center text-bl-500 border-t-1 border-w-100 h-[79px]">
-        © 2023 DevCut. All rights reserved.
+        © 2025 Outsider. All rights reserved.
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ const Header = () => {
           </NavLink>
         </h1>
       </div>
-      <div className="min-w-screen min-h-20 bg-white flex flex-row justify-around items-center px-5">
+      <div className="min-w-screen min-h-20 bg-white flex flex-row justify-around items-center">
         <div className="flex flex-row gap-30">
           <NavLink to={"/"}>
             <div className="flex flex-row items-center cursor-pointer gap-3">
