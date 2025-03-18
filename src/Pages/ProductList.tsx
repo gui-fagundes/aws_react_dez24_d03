@@ -18,7 +18,7 @@ const ProductList = () => {
 
   const [products, setProducts] = useState<productsProps[]>([]);
   const [inputValue, setInputValue] = useState("");
-  const [checkedValue, setCheckedValue] = useState("");
+  const [checkedValue, setCheckedValue] = useState("all");
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -64,8 +64,7 @@ const ProductList = () => {
           <h1>Applied Filters: </h1>
           <div className="flex flex-row justify-between w-full">
             <div className="flex gap-3">
-              <h1>Filter1</h1>
-              <h1>Filter2</h1>
+              <h1 className="font-inter text-p1 border-1 border-bl-100 rounded-xl max-w-24 text-center px-2">{`${checkedValue === "all" ? "None" : checkedValue}`}</h1>
             </div>
             <div>
               <input
