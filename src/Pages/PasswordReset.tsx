@@ -69,40 +69,60 @@ const PasswordReset = () => {
         >
           {verifying && (
             <>
-              <label htmlFor="password">New Password</label>
+              <label
+                htmlFor="password"
+                className="font-inter text-bl-600 text-p1 font-medium"
+              >
+                New Password
+              </label>
               <input
                 type="password"
                 id="password"
                 placeholder="Your New Password"
-                className=" border-1 border-bl-100 rounded-md px-2 h-11"
+                className=" border-1 border-bl-100 rounded-md px-2 h-11 outline-none"
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <label htmlFor="passwordRepeat">Repeat Password</label>
+              <label
+                htmlFor="passwordRepeat"
+                className="font-inter text-bl-600 text-p1 font-medium"
+              >
+                Repeat Password
+              </label>
               <input
                 type="password"
                 id="passwordRepeat"
                 placeholder="Repeat Your Password"
-                className="border-1 border-bl-100 rounded-md px-2 h-11"
+                className="border-1 border-bl-100 rounded-md px-2 h-11 outline-none"
                 onChange={(e) => setRepeatPassword(e.target.value)}
               />
-              <label htmlFor="code">Code</label>
+              <label
+                htmlFor="code"
+                className="font-inter text-bl-600 text-p1 font-medium"
+              >
+                Code
+              </label>
               <input
                 type="text"
                 id="code"
                 placeholder="Code"
-                className="border-1 border-bl-100 rounded-md px-2 h-11"
+                className="border-1 border-bl-100 rounded-md px-2 h-11 outline-none"
                 onChange={(e) => setCode(e.target.value)}
               />
             </>
           )}
           {!verifying && (
             <>
-              <label htmlFor="email">Email</label>
+              <label
+                htmlFor="email"
+                className="font-inter text-bl-600 text-p1 font-medium"
+              >
+                Email
+              </label>
               <input
                 type="email"
                 id="email"
                 placeholder="Your Email"
-                className=" border-1 border-bl-100 rounded-md px-2 h-11"
+                className=" border-1 border-bl-100 rounded-md px-2 h-11 outline-none"
                 onChange={(e) => setEmail(e.target.value)}
               />
             </>

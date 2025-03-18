@@ -14,7 +14,7 @@ type CardProps = {
 const Card = ({ product }: CardProps) => {
   return (
     <div
-      className={`flex flex-col gap-2 items-center w-66 h-109 font-inter min-w-xs ml-3 md:ml-0`}
+      className={`flex flex-col gap- items-center w-66 h-109 font-inter  ml-3 md:ml-0`}
     >
       <div className="flex w-62 h-78 bg-w-100 items-center justify-center mt-3">
         <img

@@ -35,7 +35,7 @@ const Register = () => {
       <BreadCrumbs currentPage={"Sign Up"} />
       {verifying ? <div>Check Your Email</div> : <h1></h1>}
       <div className="w-80 h-111 flex flex-col  gap-3 my-10">
-        <CustomGoogleOneTap />
+        <CustomGoogleOneTap sign={"signup"} />
         <div className="flex gap-3 items-center justify-center w-80">
           <hr className="w-30 text-bl-100" />
           <div className="font-inter text-l1 font-medium text-bl-500">OR</div>
@@ -57,7 +57,7 @@ const Register = () => {
               type="text"
               id="name"
               placeholder="Your Name"
-              className=" border-1 border-bl-100 rounded-md px-2 h-11"
+              className=" border-1 border-bl-100 rounded-md px-2 h-11 outline-none"
               onChange={(e) => setFullName(e.target.value)}
             />
           </div>
@@ -73,7 +73,7 @@ const Register = () => {
               type="email"
               id="email"
               placeholder="Your Email"
-              className=" border-1 border-bl-100 rounded-md px-2 h-11"
+              className=" border-1 border-bl-100 rounded-md px-2 h-11 outline-none"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -88,7 +88,7 @@ const Register = () => {
               type="password"
               id="password"
               placeholder="password"
-              className=" border-1 border-bl-100 rounded-md px-2 h-11"
+              className=" border-1 border-bl-100 rounded-md px-2 h-11 outline-none"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>

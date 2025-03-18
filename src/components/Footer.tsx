@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-row flex-nowrap gap-3 font-inter text-sm">
           <input
-            className="bg-white border-1 border-gr-100 rounded-md h-[45px] w-[320] px-4 py-2"
+            className="bg-white border-1 border-gr-100 rounded-md h-[45px] w-[320] px-4 py-2 outline-none"
             type="email"
             placeholder="Your email address"
             onChange={(e) => setNewsLetterEmail(e.target.value)}

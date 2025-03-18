@@ -20,7 +20,7 @@ const Cards = () => {
   }, []);
 
   return (
-    <div className="flex flex-row flex-nowrap max-w-full px-10 justify-evenly">
+    <div className="flex flex-row flex-wrap gap-3 max-w-full px-10 justify-evenly">
       {products.map((product) => <Card product={product} key={product.id!} />)}
     </div>
   );
