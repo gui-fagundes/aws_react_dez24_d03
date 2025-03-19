@@ -20,8 +20,8 @@ const About = () => {
 
         <div>
         <span className="flex gap-10 min-w-fit text-lg place-self-center">
-                <Link to="https://github.com/gui-fagundes"  className=""><img src="/src/icons/Github.png"></img></Link>
-                <Link to="https://www.linkedin.com/in/guilherme-lemos-180174262/"  className=""><img src="/src/icons/linkedIn.png" className="w-6 h-6"></img></Link>
+                <Link to="https://github.com/gui-fagundes"  className="" target="blank"><img src="/src/icons/Github.png"></img></Link>
+                <Link to="https://www.linkedin.com/in/guilherme-lemos-180174262/"  className="" target="blank"><img src="/src/icons/linkedIn.png" className="w-6 h-6"></img></Link>
               </span>
         </div>
       </div>

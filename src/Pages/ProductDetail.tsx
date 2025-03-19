@@ -66,7 +66,7 @@ const ProductDetail = () => {
     <div className="flex flex-col justify-center items-center">
       <BreadCrumbs currentPage={product.title} />
 
-      <div className="w-273 max-w-screen flex flex-row justify-center h-136">
+      <div className="w-273 max-w-screen flex flex-row justify-center h-136 mt-10">
         <div className="bg-bl-100 justify-center items-center max-w-[50%]">
           <img src={product.imagesUrl[0]} alt="" />
         </div>

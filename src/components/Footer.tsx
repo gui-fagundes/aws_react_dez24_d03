@@ -36,7 +36,7 @@ const Footer = () => {
             placeholder="Your email address"
             onChange={(e) => setNewsLetterEmail(e.target.value)}
           />
-          <button className="text-w-900 bg-bl-900 font-medium font-inter text-p1 text-center px-4 py-2 rounded-md h-[45px] w-[116px]"
+          <button className="text-w-900 bg-bl-900 font-medium font-inter text-p1 text-center px-4 py-2 rounded-md h-[45px] w-[116px] cursor-pointer"
           onClick={(e) => handleNewsLetterSubmit(e)}>
             Subscribe
           </button>

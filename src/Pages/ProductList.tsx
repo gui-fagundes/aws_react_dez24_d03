@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
-import BreadCrumbs from "../components/BreadCrumbs";
 import Card from "../components/Card";
+import BreadCrumbsSmall from "../components/BreadCrumbsSmall";
 
 const ProductList = () => {
   type productsProps = {
@@ -42,12 +42,16 @@ const ProductList = () => {
 
   return (
     <div className="flex flex-col">
-      <BreadCrumbs currentPage="Products" />
-      <div className="flex flex-row max-w-screen">
-        <div className="flex flex-col h-135 border-1 w-62 border-bl-100 mx-30 gap-3">
-          <h1>Categories</h1>
+      <BreadCrumbsSmall currentPage="Products" />
+      <div className="flex flex-col md:flex-row max-w-screen">
+        <div className="flex flex-row flex-wrap md:flex-col md:h-135 md:border-1 max-w-screen md:w-62 border-bl-100 rounded-md mx-30 my-10 gap-3 py-5 px-3">
+          <h1 className="hidden md:flex">Categories</h1>
           {["Tops", "Bottoms", "Coats", "Socks", "all"].map((category) => (
-            <label key={category} className="flex gap-3" htmlFor={category}>
+            <label
+              key={category}
+              className="flex gap-3 md:border-b-1 border-bl-100 py-3 text-bl-600 text-p1 font-inter"
+              htmlFor={category}
+            >
               <input
                 className="hidden peer"
                 type="radio"
@@ -55,26 +59,41 @@ const ProductList = () => {
                 name="categories"
                 id={category}
               />
-              <div className="border-1 border-bl-100 h-6 w-6 rounded-lg peer-checked:bg-bl-800 text-w-900 p-1"></div>
+              <div className="border-4 border-bl-100 h-6 w-6 rounded-sm peer-checked:bg-bl-600 text-w-900 p-1"></div>
               <span className="font-inter">{category.replace(/_/g, " ")}</span>
             </label>
           ))}
         </div>
-        <div className="flex flex-col w-full">
-          <h1>Applied Filters: </h1>
+        <div className="flex flex-col w-full py-5 md:py-15 md:pr-10 gap-3 px-20 md:pl-0">
+          <h1 className="text-p1 font-inter font-medium text-bl-900">
+            Applied Filters:{" "}
+          </h1>
           <div className="flex flex-row justify-between w-full">
             <div className="flex gap-3">
-              <h1 className="font-inter text-p1 border-1 border-bl-100 rounded-xl max-w-24 text-center px-2">{`${checkedValue === "all" ? "None" : checkedValue}`}</h1>
+              <h1 className="font-inter text-l1 border-1 border-bl-100 rounded-4xl max-w-28 max-h-9 text-center px-4 flex justify-around items-center gap-2">
+                {`${checkedValue === "all" ? "None" : checkedValue}`} <h2>X</h2>
+              </h1>
+              <h1
+                className={`font-inter text-l1 border-1 border-bl-100 rounded-4xl max-w-28 max-h-9 text-center px-4 justify-around items-center gap-2 ${
+                  inputValue ? "flex" : "hidden"
+                }`}
+              >
+                {`${inputValue ? inputValue : ""}`} <h2>X</h2>
+              </h1>
             </div>
             <div>
               <input
                 type="text"
                 placeholder="Search Products"
+                className="border-1 border-bl-100 rounded-md text-bl-300 outline-none px-4 py-2 font-inter text-p1"
                 onChange={handleInput}
               />
             </div>
           </div>
-          <div>Showing Products</div>
+          <div>
+            <h1 className="font-inter font-medium text-l1 text-bl-500">
+            Showing Products
+              </h1></div>
 
           <div className="flex flex-row justify-start gap-2 flex-wrap">
             {products
