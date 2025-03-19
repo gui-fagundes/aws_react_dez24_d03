@@ -14,6 +14,7 @@ const ProductDetail = () => {
   const [size, setSize] = useState("");
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
+  const [displayImage, setDisplayImage] = useState(0);
 
   const current = location.pathname;
 
@@ -62,6 +63,25 @@ const ProductDetail = () => {
     setColor(color);
   };
 
+  const getColor = (color: string) => {
+    switch (color) {
+      case "black":
+        return "bg-bl-800";
+
+      case "yellow":
+        return "bg-y-800";
+
+      case "blue":
+        return "bg-b-800";
+
+      case "red":
+        return "bg-r-800";
+
+      default:
+        return ''
+    }
+  };
+
   return (
     <div className="flex flex-col justify-center items-center">
       <BreadCrumbs currentPage={product.title} />
@@ -86,14 +106,10 @@ const ProductDetail = () => {
             <div className="flex gap-3">
               {product.colors.map((color) => (
                 <div
-                  className={`rounded-full h-8 w-8 border-1 border-bl-900 cursor-pointer ${
-                    selectedColor === color ? "bg-bl-300" : ""
-                  }`}
+                  className={`rounded-full h-8 w-8 border-1 border-bl-200 cursor-pointer  ${getColor(color)} ${selectedColor === color ? "border-3 border-bl-300" : ""}`}
                   key={color}
                   onClick={() => handleColor(color)}
-                >
-                  {color}
-                </div>
+                ></div>
               ))}
             </div>
             <h1 className="font-inter font-medium text-l1 text-bl-500">

@@ -10,7 +10,7 @@ const Page404 = () => {
       <p>Looks like we could not find the page you're looking for.</p>
 
       <div className="bg-bl-900 h-11 w-60 rounded-md cursor-pointer text-center text-w-900 content-center">
-          <Link to={"/home"}>Take me back home</Link>
+          <Link to={"/"}>Take me back home</Link>
         </div>
     </div>
   )

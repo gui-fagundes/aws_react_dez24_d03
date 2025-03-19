@@ -2,95 +2,256 @@
   "products": [
     {
       "id": "1",
-      "title": "Black T-Shirt",
-      "description":"Black T-Shirt",
-      "imagesUrl": ["/src/assets/black-shirt.png"],
+      "title": "T-Shirt",
+      "description": "Normal T-Shirt",
+      "imagesUrl": [
+        "https://http2.mlstatic.com/D_NQ_NP_889662-MLB70090768890_062023-O-camiseta-masculina-camisas-slim-voker-100-algodo-atacado.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_964230-MLB70091185112_062023-O-camiseta-masculina-camisas-slim-voker-100-algodo-atacado.webp"
+      ],
       "price": 140,
       "inStock": true,
-      "colors": ["black", "gray"],
-      "sizes": ["S", "M", "X", "XL"],
+      "colors": ["black", "yellow", "red", "blue"],
+      "sizes": ["S", "M", "L", "XL"],
       "tag": "shirt",
-      "category": "shirt"
+      "category": "Tops"
     },
-    
-      {
-        "id":"2",
-        "title": "Camiseta Preta",
-        "description": "A melhor camisa preta das camisas pretas",
-        "imagesUrl": ["/src/assets/black-shirt.png"],
-        "price": 199,
-        "inStock": true,
-        "colors": ["black", "yellow"],
-        "sizes": ["S", "M", "X"],
-        "tag":"shirt",
-        "category":"shirt"
-
-      },
-      {
-        "id": "3",
-        "title": "Black T-T-Shirt",
-        "description":"Black T-Shirt",
-        "imagesUrl": ["/src/assets/black-shirt.png"],
-        "price": 250,
-        "inStock": false,
-        "colors": ["black", "gray"],
-        "sizes": ["S", "M", "X", "XL"],
-        "tag": "shirt",
-        "category": "shirt"
-      },
-    
-      {
-        "id":"4",
-        "title": "Camiseta Preta",
-        "description": "A melhor camisa preta das camisas pretas",
-        "imagesUrl": ["/src/assets/black-shirt.png"],
-        "price": 199,
-        "inStock": true,
-        "colors": ["black", "yellow"],
-        "sizes": ["S", "M", "X"],
-        "tag":"shirt",
-        "category":"Tops"
-
-      },
-    
-      {
-        "id":"5",
-        "title": "Camiseta Preta",
-        "description": "A melhor camisa preta das camisas pretas",
-        "imagesUrl": ["/src/assets/black-shirt.png"],
-        "price": 199,
-        "inStock": true,
-        "colors": ["black", "yellow"],
-        "sizes": ["S", "M", "X"],
-        "tag":"shirt",
-        "category":"Tops"
-
-      },
-    
-      {
-        "id":"6",
-        "title": "Camiseta Preta",
-        "description": "A melhor camisa preta das camisas pretas",
-        "imagesUrl": ["/src/assets/black-shirt.png"],
-        "price": 199,
-        "inStock": true,
-        "colors": ["black", "yellow"],
-        "sizes": ["S", "M", "X"],
-        "tag":"shirt",
-        "category":"Bottoms"
-
-      }
-    
+    {
+      "id": "2",
+      "title": "Tecnologic T-shirt",
+      "description": "A melhor camisa preta das camisas pretas",
+      "imagesUrl": [
+        "https://http2.mlstatic.com/D_NQ_NP_703408-MLB70091078790_062023-O-camiseta-masculina-camisas-slim-voker-100-algodo-atacado.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_889662-MLB70090768890_062023-O-camiseta-masculina-camisas-slim-voker-100-algodo-atacado.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_964230-MLB70091185112_062023-O-camiseta-masculina-camisas-slim-voker-100-algodo-atacado.webp"
+      ],
+      "price": 499,
+      "inStock": true,
+      "colors": ["black", "blue", "red"],
+      "sizes": ["S", "M", "L", "XL"],
+      "tag": "shirt",
+      "category": "Tops"
+    },
+    {
+      "id": "3",
+      "title": "Futuristic T-shirt",
+      "description": "Wow",
+      "imagesUrl": [
+        "https://http2.mlstatic.com/D_NQ_NP_964230-MLB70091185112_062023-O-camiseta-masculina-camisas-slim-voker-100-algodo-atacado.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_703408-MLB70091078790_062023-O-camiseta-masculina-camisas-slim-voker-100-algodo-atacado.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_889662-MLB70090768890_062023-O-camiseta-masculina-camisas-slim-voker-100-algodo-atacado.webp"
+      ],
+      "price": 999,
+      "inStock": false,
+      "colors": ["black", "blue"],
+      "sizes": ["S", "M", "L", "XL"],
+      "tag": "shirt",
+      "category": "Tops"
+    },
+    {
+      "id": "4",
+      "title": "AmongUs",
+      "description": "Impostor",
+      "imagesUrl": [
+        "https://http2.mlstatic.com/D_NQ_NP_630360-MLB73225240515_122023-O-camiseta-adulto-camisa-100-algodo-among-us-manga-curta.webp"
+      ],
+      "price": 89,
+      "inStock": true,
+      "colors": ["black", "yellow"],
+      "sizes": ["S", "M", "L"],
+      "tag": "shirt",
+      "category": "Tops"
+    },
+    {
+      "id": "5",
+      "title": "Camiseta Preta",
+      "description": "A melhor camisa preta das camisas pretas",
+      "imagesUrl": ["/src/assets/black-shirt.png"],
+      "price": 199,
+      "inStock": true,
+      "colors": ["black", "yellow"],
+      "sizes": ["S", "M", "X"],
+      "tag": "shirt",
+      "category": "Tops"
+    },
+    {
+      "id": "6",
+      "title": "Camiseta Preta",
+      "description": "A melhor camisa preta das camisas pretas",
+      "imagesUrl": ["/src/assets/black-shirt.png"],
+      "price": 199,
+      "inStock": true,
+      "colors": ["black", "yellow", "blue", "red"],
+      "sizes": ["S", "M", "X"],
+      "tag": "shirt",
+      "category": "Tops"
+    },
+    {
+      "id": "7",
+      "title": "Sweatshirt",
+      "description": "Lorem ipsum dolor sit amet. Qui voluptatem dolores rem beatae repellat qui architecto sint et perferendis quae aut libero ratione quo voluptatum aperiam eos atque omnis. Qui galisum quam et quia impedit ex sint consequatur quo quibusdam provident? Qui maxime totam vel voluptate totam sit error numquam. Est enim obcaecati sit eligendi dolore ex maiores dolores At quidem tenetur id ipsa minima et omnis deserunt ea ipsa quas.",
+      "imagesUrl": [
+        "https://http2.mlstatic.com/D_NQ_NP_647257-MLB80654445947_112024-O-blusa-moletom-stranger-cultivate-your-dreams.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_902935-MLB80654416243_112024-O-blusa-moletom-stranger-cultivate-your-dreams.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_921733-MLB80653944183_112024-O-blusa-moletom-stranger-cultivate-your-dreams.webp"
+      ],
+      "price": 449,
+      "inStock": true,
+      "colors": ["black", "yellow", "blue", "red"],
+      "sizes": ["S", "M", "X", "XL"],
+      "tag": "Coats",
+      "category": "Coats"
+    },
+    {
+      "id": "8",
+      "title": "Sweatshirt Pro",
+      "description": "Lorem ipsum dolor sit amet. Qui voluptatem dolores rem beatae repellat qui architecto sint et perferendis quae aut libero ratione quo voluptatum aperiam eos atque omnis. Qui galisum quam et quia impedit ex sint consequatur quo quibusdam provident? Qui maxime totam vel voluptate totam sit error numquam. Est enim obcaecati sit eligendi dolore ex maiores dolores At quidem tenetur id ipsa minima et omnis deserunt ea ipsa quas.",
+      "imagesUrl": [
+        "https://http2.mlstatic.com/D_NQ_NP_902935-MLB80654416243_112024-O-blusa-moletom-stranger-cultivate-your-dreams.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_647257-MLB80654445947_112024-O-blusa-moletom-stranger-cultivate-your-dreams.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_921733-MLB80653944183_112024-O-blusa-moletom-stranger-cultivate-your-dreams.webp"
+      ],
+      "price": 999,
+      "inStock": true,
+      "colors": ["black", "yellow", "blue", "red"],
+      "sizes": ["M", "L"],
+      "tag": "Coats",
+      "category": "Coats"
+    },
+    {
+      "id": "9",
+      "title": "Sweatshirt Maximum",
+      "description": "Lorem ipsum dolor sit amet. Qui voluptatem dolores rem beatae repellat qui architecto sint et perferendis quae aut libero ratione quo voluptatum aperiam eos atque omnis. Qui galisum quam et quia impedit ex sint consequatur quo quibusdam provident? Qui maxime totam vel voluptate totam sit error numquam. Est enim obcaecati sit eligendi dolore ex maiores dolores At quidem tenetur id ipsa minima et omnis deserunt ea ipsa quas.",
+      "imagesUrl": [
+        "https://http2.mlstatic.com/D_NQ_NP_921733-MLB80653944183_112024-O-blusa-moletom-stranger-cultivate-your-dreams.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_647257-MLB80654445947_112024-O-blusa-moletom-stranger-cultivate-your-dreams.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_902935-MLB80654416243_112024-O-blusa-moletom-stranger-cultivate-your-dreams.webp"
+      ],
+      "price": 1299,
+      "inStock": true,
+      "colors": ["black", "yellow", "blue", "red"],
+      "sizes": ["S", "M", "L", "XL", "2XL"],
+      "tag": "Coats",
+      "category": "Coats"
+    },
+    {
+      "id": "10",
+      "title": "Skinny Jeans",
+      "description": "Lorem ipsum dolor sit amet. Qui voluptatem dolores rem beatae repellat qui architecto sint et perferendis quae aut libero ratione quo voluptatum aperiam eos atque omnis. Qui galisum quam et quia impedit ex sint consequatur quo quibusdam provident? Qui maxime totam vel voluptate totam sit error numquam. Est enim obcaecati sit eligendi dolore ex maiores dolores At quidem tenetur id ipsa minima et omnis deserunt ea ipsa quas.",
+      "imagesUrl": [
+        "https://http2.mlstatic.com/D_NQ_NP_808628-MLB54690300880_032023-O-calca-skinny-preta-masculina-jeans-com-elastano-lycra-2023.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_979947-MLB54686709685_032023-O-calca-skinny-preta-masculina-jeans-com-elastano-lycra-2023.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_777850-MLB54690209694_032023-O-calca-skinny-preta-masculina-jeans-com-elastano-lycra-2023.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_797215-MLB54686709683_032023-O-calca-skinny-preta-masculina-jeans-com-elastano-lycra-2023.webp"
+      ],
+      "price": 120,
+      "inStock": true,
+      "colors": ["black"],
+      "sizes": ["S", "M", "L", "XL"],
+      "tag": "Bottoms",
+      "category": "Bottoms"
+    },
+    {
+      "id": "11",
+      "title": "Super Skinny Jeans",
+      "description": "Lorem ipsum dolor sit amet. Qui voluptatem dolores rem beatae repellat qui architecto sint et perferendis quae aut libero ratione quo voluptatum aperiam eos atque omnis. Qui galisum quam et quia impedit ex sint consequatur quo quibusdam provident? Qui maxime totam vel voluptate totam sit error numquam. Est enim obcaecati sit eligendi dolore ex maiores dolores At quidem tenetur id ipsa minima et omnis deserunt ea ipsa quas.",
+      "imagesUrl": [
+        "https://http2.mlstatic.com/D_NQ_NP_979947-MLB54686709685_032023-O-calca-skinny-preta-masculina-jeans-com-elastano-lycra-2023.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_808628-MLB54690300880_032023-O-calca-skinny-preta-masculina-jeans-com-elastano-lycra-2023.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_777850-MLB54690209694_032023-O-calca-skinny-preta-masculina-jeans-com-elastano-lycra-2023.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_797215-MLB54686709683_032023-O-calca-skinny-preta-masculina-jeans-com-elastano-lycra-2023.webp"
+      ],
+      "price": 260,
+      "inStock": true,
+      "colors": ["black", "blue"],
+      "sizes": ["S", "M", "L", "XL"],
+      "tag": "Bottoms",
+      "category": "Bottoms"
+    },
+    {
+      "id": "12",
+      "title": "OverPriced Skinny Jeans",
+      "description": "Lorem ipsum dolor sit amet. Qui voluptatem dolores rem beatae repellat qui architecto sint et perferendis quae aut libero ratione quo voluptatum aperiam eos atque omnis. Qui galisum quam et quia impedit ex sint consequatur quo quibusdam provident? Qui maxime totam vel voluptate totam sit error numquam. Est enim obcaecati sit eligendi dolore ex maiores dolores At quidem tenetur id ipsa minima et omnis deserunt ea ipsa quas.",
+      "imagesUrl": [
+        "https://http2.mlstatic.com/D_NQ_NP_777850-MLB54690209694_032023-O-calca-skinny-preta-masculina-jeans-com-elastano-lycra-2023.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_808628-MLB54690300880_032023-O-calca-skinny-preta-masculina-jeans-com-elastano-lycra-2023.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_979947-MLB54686709685_032023-O-calca-skinny-preta-masculina-jeans-com-elastano-lycra-2023.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_797215-MLB54686709683_032023-O-calca-skinny-preta-masculina-jeans-com-elastano-lycra-2023.webp"
+      ],
+      "price": 680,
+      "inStock": true,
+      "colors": ["black"],
+      "sizes": ["S", "M", "L", "XL"],
+      "tag": "Bottoms",
+      "category": "Bottoms"
+    },
+    {
+      "id": "13",
+      "title": "Compression Socks",
+      "description": "Lorem ipsum dolor sit amet. Qui voluptatem dolores rem beatae repellat qui architecto sint et perferendis quae aut libero ratione quo voluptatum aperiam eos atque omnis. Qui galisum quam et quia impedit ex sint consequatur quo quibusdam provident? Qui maxime totam vel voluptate totam sit error numquam. Est enim obcaecati sit eligendi dolore ex maiores dolores At quidem tenetur id ipsa minima et omnis deserunt ea ipsa quas.",
+      "imagesUrl": [
+        "https://http2.mlstatic.com/D_NQ_NP_805724-MLB76734057557_052024-O-meia-de-compresso-para-trombose-e-circulaco.webp"
+      ],
+      "price": 60,
+      "inStock": true,
+      "colors": ["black"],
+      "sizes": ["S", "M", "L", "XL"],
+      "tag": "Socks",
+      "category": "Socks"
+    },
+    {
+      "id": "14",
+      "title": "Soccer Socks",
+      "description": "Lorem ipsum dolor sit amet. Qui voluptatem dolores rem beatae repellat qui architecto sint et perferendis quae aut libero ratione quo voluptatum aperiam eos atque omnis. Qui galisum quam et quia impedit ex sint consequatur quo quibusdam provident? Qui maxime totam vel voluptate totam sit error numquam. Est enim obcaecati sit eligendi dolore ex maiores dolores At quidem tenetur id ipsa minima et omnis deserunt ea ipsa quas.",
+      "imagesUrl": [
+        "https://http2.mlstatic.com/D_NQ_NP_641071-MLB82331707977_022025-O-kit-3-pares-meio-de-futebol-lupo-infantil-atoalhado-2810-f.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_768887-MLB82331707983_022025-O-kit-3-pares-meio-de-futebol-lupo-infantil-atoalhado-2810-f.webp"
+      ],
+      "price": 40,
+      "inStock": true,
+      "colors": ["black", "blue"],
+      "sizes": ["S", "M", "L", "XL"],
+      "tag": "Socks",
+      "category": "Socks"
+    },
+    {
+      "id": "15",
+      "title": "Christmas Elf Socks",
+      "description": "Lorem ipsum dolor sit amet. Qui voluptatem dolores rem beatae repellat qui architecto sint et perferendis quae aut libero ratione quo voluptatum aperiam eos atque omnis. Qui galisum quam et quia impedit ex sint consequatur quo quibusdam provident? Qui maxime totam vel voluptate totam sit error numquam. Est enim obcaecati sit eligendi dolore ex maiores dolores At quidem tenetur id ipsa minima et omnis deserunt ea ipsa quas.",
+      "imagesUrl": [
+        "https://http2.mlstatic.com/D_NQ_NP_937113-MLB74816349616_032024-O-kit-06-meio-futebol-infantil-juvenil-meio-longo.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_926447-MLB74816043976_032024-O-kit-06-meio-futebol-infantil-juvenil-meio-longo.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_930489-MLB74816319636_032024-O-kit-06-meio-futebol-infantil-juvenil-meio-longo.webp"
+      ],
+      "price": 89,
+      "inStock": true,
+      "colors": ["red", "blue"],
+      "sizes": ["S", "M", "L", "XL"],
+      "tag": "Socks",
+      "category": "Socks"
+    }
   ],
   "NewsLetter": [
     {
-      "id": 1,
+      "id": "1",
       "email": "testemail@email.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "email": "ABLABLUBLUE@BLUBLE.COM"
+    },
+    {
+      "id": "573b",
+      "email": "emai"
+    },
+    {
+      "id": "8fa1",
+      "email": "abc"
     }
   ],
-  "OrderHistory": []
+  "OrderHistory": [
+    {
+      "id": "teste@teste.com",
+      "history": []
+    }
+  ]
 }

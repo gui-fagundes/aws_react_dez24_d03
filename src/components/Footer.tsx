@@ -3,21 +3,26 @@ import { NavLink } from "react-router-dom";
 import api from "../services/api";
 
 const Footer = () => {
-  const [newsLetterEmail, setNewsLetterEmail] = useState('')
-  
-  
-  
-  
+  const [newsLetterEmail, setNewsLetterEmail] = useState("");
+  const [erroreMail, seterrorEmail] = useState("");
+
+  const validateEmail = (email: string) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
   const handleNewsLetterSubmit = (e) => {
-    e.preventDefault()
-    if(!newsLetterEmail) return
-
-    api.post(`/NewsLetter`,{
-      email:newsLetterEmail
-    })
-
-
-  }
+    e.preventDefault();
+    if (!newsLetterEmail) return;
+    if (!validateEmail(newsLetterEmail)) {
+      seterrorEmail("Please use a valid email.");
+      return
+    }
+    seterrorEmail("");
+    api.post(`/NewsLetter`, {
+      email: newsLetterEmail,
+    });
+  };
   return (
     <div className="h-[629px] bg-white flex flex-col flex-nowrap justify-between">
       <div className="bg-[#f6f6f6] h-[200px] flex flex-col md:flex-row justify-around items-center py-5 lg:py-0">
@@ -29,17 +34,26 @@ const Footer = () => {
             We love to surprise our subscrivers with occasional gifts.
           </p>
         </div>
-        <div className="flex flex-row flex-nowrap gap-3 font-inter text-sm">
-          <input
-            className="bg-white border-1 border-gr-100 rounded-md h-[45px] w-[320] px-4 py-2 outline-none"
-            type="email"
-            placeholder="Your email address"
-            onChange={(e) => setNewsLetterEmail(e.target.value)}
-          />
-          <button className="text-w-900 bg-bl-900 font-medium font-inter text-p1 text-center px-4 py-2 rounded-md h-[45px] w-[116px] cursor-pointer"
-          onClick={(e) => handleNewsLetterSubmit(e)}>
-            Subscribe
-          </button>
+        <div className="flex flex-col flex-nowrap gap-3 font-inter text-sm">
+          <div className="flex flex-row flex-nowrap gap-3 font-inter text-sm">
+            <input
+              className="bg-white border-1 border-gr-100 rounded-md h-[45px] w-[320] px-4 py-2 outline-none"
+              type="email"
+              placeholder="Your email address"
+              onChange={(e) => setNewsLetterEmail(e.target.value)}
+            />
+            <button
+              className="text-w-900 bg-bl-900 font-medium font-inter text-p1 text-center px-4 py-2 rounded-md h-[45px] w-[116px] cursor-pointer"
+              onClick={(e) => handleNewsLetterSubmit(e)}
+            >
+              Subscribe
+            </button>
+          </div>
+            {erroreMail && (
+              <p className="font-inter text-l1 text-r-900 text-center">
+                {erroreMail}
+              </p>
+            )}
         </div>
       </div>
       <div className="flex flex-col lg:flex-row justify-evenly items-center gap-5 lg:gap-0">
@@ -69,17 +83,29 @@ const Footer = () => {
           <div className="flex flex-col gap-10 text-bl-300 text-p1 font-medium">
             SUPPORT
             <ul className="flex flex-col gap-3 text-bl-500">
-              <li><NavLink to={"/Page404"}>FAQ</NavLink></li>
-              <li><NavLink to={"/Page404"}>Terms of Use</NavLink></li>
-              <li><NavLink to={"/Page404"}>Privacy Policy</NavLink></li>
+              <li>
+                <NavLink to={"/Page404"}>FAQ</NavLink>
+              </li>
+              <li>
+                <NavLink to={"/Page404"}>Terms of Use</NavLink>
+              </li>
+              <li>
+                <NavLink to={"/Page404"}>Privacy Policy</NavLink>
+              </li>
             </ul>
           </div>
           <div className="flex flex-col gap-10 text-bl-300 text-p1 font-medium">
             COMPANY
             <ul className="flex flex-col gap-3 text-bl-500">
-              <li><NavLink to={"/About"}>About Us</NavLink></li>
-              <li><NavLink to={"/Page404"}>Contact</NavLink></li>
-              <li><NavLink to={"/Page404"}>Carreers</NavLink></li>
+              <li>
+                <NavLink to={"/About"}>About Us</NavLink>
+              </li>
+              <li>
+                <NavLink to={"/contact"}>Contact</NavLink>
+              </li>
+              <li>
+                <NavLink to={"/Page404"}>Carreers</NavLink>
+              </li>
             </ul>
           </div>
           <div className="flex flex-col gap-10 text-bl-300 text-p1 font-medium">
@@ -88,8 +114,12 @@ const Footer = () => {
               <li>
                 <NavLink to={"/myaccount"}>My Account</NavLink>
               </li>
-              <li><NavLink to={"/checkout"}>Checkout</NavLink></li>
-              <li><NavLink to={"/cart"}>Cart</NavLink></li>
+              <li>
+                <NavLink to={"/checkout"}>Checkout</NavLink>
+              </li>
+              <li>
+                <NavLink to={"/cart"}>Cart</NavLink>
+              </li>
             </ul>
           </div>
         </div>
