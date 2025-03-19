@@ -21,6 +21,7 @@ const ProductList = () => {
   const [checkedValue, setCheckedValue] = useState("all");
   const [priceValue, setPriceValue] = useState(2000)
   const [page, setPage] = useState(1);
+  const [maxProducts, setMaxProducts] = useState(0)
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -28,11 +29,15 @@ const ProductList = () => {
         if (checkedValue === "all") {
           const response = await api.get(`/products?price_lt=${priceValue}&_page=${page}&_per_page=9`);
           setProducts(response.data.data);
+          const size = await api.get(`/products?price_lt=${priceValue}`)
+          setMaxProducts(size.data.length)
         } else {
           const response = await api.get(
             `/products?category=${checkedValue}&price_lt=${priceValue}&_page=${page}&_per_page=9`
           );
           setProducts(response.data.data);
+          const size = await api.get(`/products?category=${checkedValue}&price_lt=${priceValue}`)
+          setMaxProducts(size.data.length)
         }
       } catch (error) {
         console.error(error);
@@ -48,6 +53,12 @@ const ProductList = () => {
   const handleChecked = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCheckedValue(e.target.checked ? e.target.id : "");
   };
+
+  const getProductCount = () => {
+    return <>
+    {`Showing ${1 + ((page-1)*9)} to ${((page-1)*9) + products.length} of ${maxProducts} Products`}
+    </>
+  }
 
   return (
     <div className="flex flex-col">
@@ -110,6 +121,13 @@ const ProductList = () => {
               >
                 {`${inputValue ? inputValue : ""}`} <b>X</b>
               </h1>
+              <h1
+                className={`font-inter text-l1 border-1 border-bl-100 rounded-4xl max-w-28 max-h-9 text-center px-4 justify-around items-center gap-2 ${
+                  priceValue ? "flex" : "hidden"
+                }`}
+              >
+                {`${priceValue ? `R$ ${priceValue}` : ""}`} <b>X</b>
+              </h1>
             </div>
             <div>
               <input
@@ -122,7 +140,7 @@ const ProductList = () => {
           </div>
           <div>
             <h1 className="font-inter font-medium text-l1 text-bl-500">
-              Showing Products
+              {getProductCount()}
             </h1>
           </div>
 
