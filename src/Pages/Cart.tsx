@@ -96,7 +96,7 @@ const Cart = () => {
             <div>
               <SignedIn>
                 <Link
-                  to={"/sucessfullOrder"}
+                  to={"/checkout"}
                   className={
                     "flex flex-row flex-nowrap justify-center font-medium text-p1 font-inter bg-bl-900 text-w-900 rounded-sm h-11 place-content-center px-4 py-2"
                   }
