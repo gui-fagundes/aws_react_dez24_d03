@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import api from "../services/api";
 import Card from "./Card";
 
+
 const Cards = () => {
   const [products, setProducts] = useState([]);
 
+
   const getProducts = async () => {
-    const response = await api.get("/products?_limit=4");
+    const response = await api.get("/products?inStock=true&_limit=4");
     return response.data;
   };
 

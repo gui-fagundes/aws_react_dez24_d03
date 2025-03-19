@@ -19,18 +19,27 @@ const ProductList = () => {
   const [products, setProducts] = useState<productsProps[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [checkedValue, setCheckedValue] = useState("all");
+  const [priceValue, setPriceValue] = useState(2000)
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await api.get("/products");
-        setProducts(response.data);
+        if (checkedValue === "all") {
+          const response = await api.get(`/products?price_lt=${priceValue}&_page=${page}&_per_page=9`);
+          setProducts(response.data.data);
+        } else {
+          const response = await api.get(
+            `/products?category=${checkedValue}&price_lt=${priceValue}&_page=${page}&_per_page=9`
+          );
+          setProducts(response.data.data);
+        }
       } catch (error) {
         console.error(error);
       }
     };
     fetchProducts();
-  }, []);
+  }, [page, checkedValue, inputValue, priceValue]);
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -63,22 +72,43 @@ const ProductList = () => {
               <span className="font-inter">{category.replace(/_/g, " ")}</span>
             </label>
           ))}
+
+          <div>
+       <label
+            htmlFor="priceRange"
+            className="block mb-2 text-sm font-inter font-medium text-p1 text-gray-900 dark:text-white"
+          >
+            Price
+          </label>
+          <input
+            id="priceRange"
+            type="range"
+            min={100}
+            max={1500}
+            step={10}
+            value={priceValue}
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer "
+            onChange={(e) => setPriceValue(parseInt(e.target.value))}
+          />
+          <div>{`R$ ${priceValue}`}</div>      
+          </div>
+         
         </div>
         <div className="flex flex-col w-full py-5 md:py-15 md:pr-10 gap-3 px-20 md:pl-0">
           <h1 className="text-p1 font-inter font-medium text-bl-900">
-            Applied Filters:{" "}
+            Applied Filters:
           </h1>
           <div className="flex flex-row justify-between w-full">
             <div className="flex gap-3">
               <h1 className="font-inter text-l1 border-1 border-bl-100 rounded-4xl max-w-28 max-h-9 text-center px-4 flex justify-around items-center gap-2">
-                {`${checkedValue === "all" ? "None" : checkedValue}`} <h2>X</h2>
+                {`${checkedValue === "all" ? "None" : checkedValue}`} <b>X</b>
               </h1>
               <h1
                 className={`font-inter text-l1 border-1 border-bl-100 rounded-4xl max-w-28 max-h-9 text-center px-4 justify-around items-center gap-2 ${
                   inputValue ? "flex" : "hidden"
                 }`}
               >
-                {`${inputValue ? inputValue : ""}`} <h2>X</h2>
+                {`${inputValue ? inputValue : ""}`} <b>X</b>
               </h1>
             </div>
             <div>
@@ -92,23 +122,32 @@ const ProductList = () => {
           </div>
           <div>
             <h1 className="font-inter font-medium text-l1 text-bl-500">
-            Showing Products
-              </h1></div>
+              Showing Products
+            </h1>
+          </div>
 
           <div className="flex flex-row justify-start gap-2 flex-wrap">
-            {products
-              .filter(
-                (product) =>
-                  product.title
-                    .toLowerCase()
-                    .includes(inputValue.trim().toLowerCase()) &&
-                  product.category.includes(
-                    checkedValue === "all" ? "" : checkedValue
-                  )
-              )
-              .map((product) => {
-                return <Card product={product} key={product.id} />;
-              })}
+            {products.map((product) => {
+              return <Card product={product} key={product.id} />;
+            })}
+          </div>
+          <div className="flex flex-row flex-nowrap w-38 h-11 border-1 border-w-200 rounded-md self-center justify-between text-center">
+            <div
+              className="text-center content-center cursor-pointer w-10 h-10"
+              onClick={() => {
+                setPage(page == 1 ? 1 : page - 1);
+              }}
+            >
+              {" "}
+              {`<`}{" "}
+            </div>
+            <div className="h-full text-center content-center">{page}</div>
+            <div
+              className="text-center content-center cursor-pointer w-10 h-10"
+              onClick={() => {
+                setPage(page + 1);
+              }}
+            >{`>`}</div>
           </div>
         </div>
       </div>
