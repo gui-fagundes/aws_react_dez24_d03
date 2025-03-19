@@ -25,9 +25,9 @@ const Header = () => {
             </div>
           </NavLink>
           <div className="flex flex-row items-center gap-5 font-inter text-bl-500">
-            <NavLink to={"/"}>Home</NavLink>
+            <NavLink to={"/"} className={"hidden md:flex"}>Home</NavLink>
             <NavLink to={"/products"}>Shop</NavLink>
-            <NavLink to={"/about"}>About</NavLink>
+            <NavLink to={"/about"} className={"hidden md:flex"}>About</NavLink>
           </div>
         </div>
 

@@ -20,7 +20,7 @@ const Footer = () => {
   }
   return (
     <div className="h-[629px] bg-white flex flex-col flex-nowrap justify-between">
-      <div className="bg-[#f6f6f6] h-[200px] flex flex-row justify-around items-center">
+      <div className="bg-[#f6f6f6] h-[200px] flex flex-col md:flex-row justify-around items-center py-5 lg:py-0">
         <div className="flex flex-col flex-nowrap gap-3">
           <h1 className="font-inter font-bold text-2xl tex-bl-900">
             Join Our Newsletter
@@ -36,20 +36,20 @@ const Footer = () => {
             placeholder="Your email address"
             onChange={(e) => setNewsLetterEmail(e.target.value)}
           />
-          <button className="text-w-900 bg-bl-900 font-medium font-inter text-P1 text-center px-4 py-2 rounded-md h-[45px] w-[116px]"
+          <button className="text-w-900 bg-bl-900 font-medium font-inter text-p1 text-center px-4 py-2 rounded-md h-[45px] w-[116px]"
           onClick={(e) => handleNewsLetterSubmit(e)}>
             Subscribe
           </button>
         </div>
       </div>
-      <div className="flex flex-row justify-evenly">
-        <div className="flex flex-col gap-4 pt-8">
+      <div className="flex flex-col lg:flex-row justify-evenly items-center gap-5 lg:gap-0">
+        <div className="flex flex-col gap-4 pt-8 items-center lg:items-start">
           <div className="flex flex-row gap-3 items-center">
             <img src="/src/icons/logo/Logomark.png" alt="" />
             <h1 className="font-extrabold text-xl text-bl-900">Outsider</h1>
           </div>
-          <div className="max-w-64">
-            <h1 className="text-P1 font-normal text-bl-500">
+          <div className="lg:max-w-64">
+            <h1 className="text-p1 font-normal text-bl-500">
               DevCut is a YouTube channel for practical project-based learning.
             </h1>
           </div>
@@ -66,7 +66,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex gap-10 font-inter">
-          <div className="flex flex-col gap-10 text-bl-300 text-P1 font-medium">
+          <div className="flex flex-col gap-10 text-bl-300 text-p1 font-medium">
             SUPPORT
             <ul className="flex flex-col gap-3 text-bl-500">
               <li><NavLink to={"/Page404"}>FAQ</NavLink></li>
@@ -74,7 +74,7 @@ const Footer = () => {
               <li><NavLink to={"/Page404"}>Privacy Policy</NavLink></li>
             </ul>
           </div>
-          <div className="flex flex-col gap-10 text-bl-300 text-P1 font-medium">
+          <div className="flex flex-col gap-10 text-bl-300 text-p1 font-medium">
             COMPANY
             <ul className="flex flex-col gap-3 text-bl-500">
               <li><NavLink to={"/About"}>About Us</NavLink></li>
@@ -82,7 +82,7 @@ const Footer = () => {
               <li><NavLink to={"/Page404"}>Carreers</NavLink></li>
             </ul>
           </div>
-          <div className="flex flex-col gap-10 text-bl-300 text-P1 font-medium">
+          <div className="flex flex-col gap-10 text-bl-300 text-p1 font-medium">
             SHOP
             <ul className="flex flex-col gap-3 text-bl-500 ">
               <li>
@@ -93,7 +93,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="flex flex-col gap-10 text-bl-300 text-P1 font-medium font-inter">
+        <div className="flex flex-col gap-10 text-bl-300 text-p1 font-medium font-inter">
           <div>ACCEPTED PAYMENTS</div>
           <div className="flex flex-row gap-3">
             <img src="/src/icons/Mastercard.png" alt="" />
@@ -102,7 +102,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-center place-content-center text-bl-500 border-t-1 border-w-100 h-[79px]">
+      <div className="text-center place-content-center text-bl-500 border-t-1 border-w-100 h-[79px] py-3 lg:py-0 mt-10">
         © 2025 Outsider. All rights reserved.
       </div>
     </div>

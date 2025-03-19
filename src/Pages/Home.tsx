@@ -4,8 +4,8 @@ import Cards from "../components/Cards";
 const Home = () => {
   return (
     <div className="flex flex-col flex-nowrap gap-3">
-      <div className="flex flex-col md:flex-row justify-around bg-w-100 flex-nowrap mt-32 items-center max-h-110">
-        <div className="flex flex-col justify-center gap-10">
+      <div className="flex flex-col md:flex-row justify-around bg-w-100 flex-nowrap mt-32 py-10 md:py-0 items-center max-h-110">
+        <div className="flex flex-col justify-center gap-10 items-center md:items-start  text-center md:text-start">
           <div>
             <h1 className="font-inter text-[32px] font-semibold text-bl-800">
               Fresh Arrivals Online
@@ -24,7 +24,7 @@ const Home = () => {
             <img src="/src/icons/Arrow Right.png" alt="" />
           </Link>
         </div>
-        <div className="bg-[url-(/src/assets/Hero-elipse.png)] collapse md:visible">
+        <div className="bg-[url-(/src/assets/Hero-elipse.png)] hidden md:flex">
           <div className="h-110 overflow-y-hidden ">
             <img
               src="/src/assets/Hero-Image.png"
@@ -77,9 +77,9 @@ const Home = () => {
         </h1>
         <Cards />
       </div>
-      <div className="flex flex-col md:flex-row justify-around bg-w-100 flex-nowrap mt-32 items-center">
-        <div className="flex flex-col justify-center gap-10">
-          <div>
+      <div className="flex flex-col md:flex-row justify-around bg-w-100 flex-nowrap mt-32 py-10 md:py-0 items-center">
+        <div className="flex flex-col justify-center items-center md:items-start gap-10">
+          <div className=" text-center md:text-start">
             <h1 className="font-inter text-[32px] font-semibold text-bl-800">
               Browse Our Fashion Paradise!
             </h1>
@@ -98,7 +98,7 @@ const Home = () => {
             <img src="/src/icons/Arrow Right.png" alt="" />
           </Link>
         </div>
-        <div className="bg-[url-(/src/assets/Hero-elipse.png)]  invisible md:visible">
+        <div className="bg-[url-(/src/assets/Hero-elipse.png)]  hidden md:flex">
           <img
             src="/src/assets/CategoryImage.png"
             alt=""
