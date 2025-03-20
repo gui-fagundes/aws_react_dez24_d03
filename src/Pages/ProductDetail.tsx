@@ -15,7 +15,9 @@ const ProductDetail = () => {
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
   const [displayImage, setDisplayImage] = useState(0);
-  const [orderErrors, setOrderErrors] = useState('')
+  const [orderErrors, setOrderErrors] = useState("");
+  const [stars] = useState((Math.random() * 5).toFixed(1));
+  const [reviews] = useState(Math.ceil(Math.random() * 100));
 
   const current = location.pathname;
 
@@ -79,29 +81,33 @@ const ProductDetail = () => {
         return "bg-r-800";
 
       default:
-        return ''
+        return "";
     }
   };
 
-
   const handleAddProductToCart = () => {
     const cartItem = getCartItemInfo();
-    if(!selectedColor) {
-      setOrderErrors("Please Select a Color")
-      return
+    if (!selectedColor) {
+      setOrderErrors("Please Select a Color");
+      return;
     }
-    if(!selectedSize) {
-      setOrderErrors("Please Select a Size")
-      return
+    if (!selectedSize) {
+      setOrderErrors("Please Select a Size");
+      return;
     }
-    setOrderErrors('')
+    setOrderErrors("");
     dispatch(CartSlice.actions.addItemToCart(cartItem));
-  }
-
+  };
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <BreadCrumbs currentPage={product.title} />
+      <div className="h-16 max-w-screen mt-32 px-30 content-center self-start">
+        <h2 className="text-p1 text-bl-500 font-medium flex">
+          Outsider
+          <img src="/src/icons/Chevron Right.png" alt="" />
+          <b className="text-p1 font-medium text-bl-900">{product.title}</b>
+        </h2>
+      </div>
 
       <div className="w-273 max-w-screen flex flex-row justify-center h-136 mt-10">
         <div className="bg-bl-100 justify-center items-center max-w-[50%]">
@@ -112,9 +118,14 @@ const ProductDetail = () => {
             <h1 className="text-h3 font-inter font-bold text-bl-900">
               {product.title}
             </h1>
-            <div className="flex flex-row gap-3">
-              <div>Stars</div>
-              <div>{product.inStock ? "In Stock" : "NO STOCK"}</div>
+            <div className="flex flex-row gap-3 h-7">
+              <div className="flex rounded-2xl bg-w-100 text-bl-500 items-center gap-1 text-l1 font-inter font-medium px-3">
+                <img src="/src/icons/Star.png" alt="" />
+                <h1>{stars}</h1>
+                <hr className="text-bl-500 w-3" />
+                <h1>{reviews} Reviews</h1>
+              </div>
+              <div className="max-w-23 border-1 border-bl-100 text-bl-500 text-l1 font-medium font-inter flex items-center px-2 rounded-2xl">{product.inStock ? "IN STOCK" : "NO STOCK"}</div>
             </div>
             <div>{`$${product.price}`}</div>
             <h1 className="font-inter font-medium text-l1 text-bl-500">
@@ -123,7 +134,11 @@ const ProductDetail = () => {
             <div className="flex gap-3">
               {product.colors.map((color) => (
                 <div
-                  className={`rounded-full h-8 w-8 border-1 border-bl-200 cursor-pointer  ${getColor(color)} ${selectedColor === color ? "border-3 border-bl-300" : ""}`}
+                  className={`rounded-full h-8 w-8 border-1 border-bl-200 cursor-pointer  ${getColor(
+                    color
+                  )} ${
+                    selectedColor === color ? "border-3 border-bl-300" : ""
+                  }`}
                   key={color}
                   onClick={() => handleColor(color)}
                 ></div>
@@ -166,17 +181,20 @@ const ProductDetail = () => {
               </div>
             </div>
             <div>
-
-            <div
-              className="rounded-md bg-bl-900 text-w-900 w-62 h-11 cursor-pointer text-center content-center"
-              onClick={() => {
-                handleAddProductToCart()
-              }}
+              <div
+                className="rounded-md bg-bl-900 text-w-900 w-62 h-11 cursor-pointer text-center content-center"
+                onClick={() => {
+                  handleAddProductToCart();
+                }}
               >
-              Add to Cart
-            </div>
-            {orderErrors && <p className="font-inter text-l1 text-r-900 text-center">{orderErrors}</p>}
+                Add to Cart
               </div>
+              {orderErrors && (
+                <p className="font-inter text-l1 text-r-900 text-center">
+                  {orderErrors}
+                </p>
+              )}
+            </div>
             <h1 className="font-inter font-medium text-bl-500 text-l1">
               — Free shipping on orders $100 +
             </h1>
@@ -184,8 +202,10 @@ const ProductDetail = () => {
         </div>
       </div>
 
-      <div className="flex flex-row h-81 mx-20 justify-center items-center gap-5">
-        <div>...Details</div>
+      <div className="flex flex-row max-h-81 mx-20 justify-center gap-5 my-20">
+        <div className="max-w-60 h-10 bg-w-100 text-p1 font-inter font-medium text-bl-900 flex items-center gap-2 pl-3 pr-10 rounded-md self-center">
+          <img src="/src/icons/More.png" alt="more" className="w-6 h-6" />
+          Details</div>
         <div>
           <h1>Detail</h1>
           <p>{product.description}</p>

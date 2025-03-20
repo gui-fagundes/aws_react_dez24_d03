@@ -29,7 +29,7 @@ const Footer = () => {
     }, 2000);
   };
   return (
-    <div className="h-[629px] bg-white flex flex-col flex-nowrap justify-between">
+    <div className="h-[629px] bg-white flex flex-col flex-nowrap justify-between max-w-screen">
       {validatePass && (
         <>
           <div className="fixed inset-0 flex items-center justify-center z-50 px-4 md:px-0">

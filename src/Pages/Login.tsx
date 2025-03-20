@@ -63,7 +63,7 @@ const Login = () => {
   }, [isSignedIn, navigate]);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center max-w-screen">
       <BreadCrumbs currentPage={"Login"} />
       <div className="w-80 h-111 flex flex-col gap-3 my-10">
         <CustomGoogleOneTap sign={"signin"} />

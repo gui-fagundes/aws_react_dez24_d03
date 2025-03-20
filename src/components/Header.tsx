@@ -7,8 +7,8 @@ const Header = () => {
   const userImage = user?.imageUrl
   const count = useAppSelector((state) => state.cart.count);
   return (
-    <div className="h-32 flex flex-col items-center m-0 p-0 overflow-hidden fixed z-100">
-      <div className="min-h-10 min-w-full bg-black text-white text-center pt-2">
+    <div className="h-32 flex flex-col items-center m-0 p-0 overflow-hidden fixed z-100 max-w-screen drop-shadow-xl">
+      <div className="h-10 min-w-full bg-black text-white text-center pt-2">
         <h1>
           Get 25% OFF on your first order.{" "}
           <NavLink className={"underline"} to={"/products"}>
@@ -16,7 +16,7 @@ const Header = () => {
           </NavLink>
         </h1>
       </div>
-      <div className="min-w-screen min-h-20 bg-white flex flex-row justify-around items-center">
+      <div className="min-w-screen min-h-22 bg-white flex flex-row justify-around items-center">
         <div className="flex flex-row gap-30">
           <NavLink to={"/"}>
             <div className="flex flex-row items-center cursor-pointer gap-3">
