@@ -10,8 +10,18 @@
       ],
       "price": 140,
       "inStock": true,
-      "colors": ["black", "yellow", "red", "blue"],
-      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        "black",
+        "yellow",
+        "red",
+        "blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "tag": "shirt",
       "category": "Tops"
     },
@@ -26,8 +36,17 @@
       ],
       "price": 499,
       "inStock": true,
-      "colors": ["black", "blue", "red"],
-      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        "black",
+        "blue",
+        "red"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "tag": "shirt",
       "category": "Tops"
     },
@@ -42,8 +61,16 @@
       ],
       "price": 999,
       "inStock": false,
-      "colors": ["black", "blue"],
-      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        "black",
+        "blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "tag": "shirt",
       "category": "Tops"
     },
@@ -56,8 +83,15 @@
       ],
       "price": 89,
       "inStock": true,
-      "colors": ["black", "yellow"],
-      "sizes": ["S", "M", "L"],
+      "colors": [
+        "black",
+        "yellow"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
       "tag": "shirt",
       "category": "Tops"
     },
@@ -65,11 +99,20 @@
       "id": "5",
       "title": "Camiseta Preta",
       "description": "A melhor camisa preta das camisas pretas",
-      "imagesUrl": ["/src/assets/black-shirt.png"],
+      "imagesUrl": [
+        "/src/assets/black-shirt.png"
+      ],
       "price": 199,
       "inStock": true,
-      "colors": ["black", "yellow"],
-      "sizes": ["S", "M", "X"],
+      "colors": [
+        "black",
+        "yellow"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "X"
+      ],
       "tag": "shirt",
       "category": "Tops"
     },
@@ -77,11 +120,22 @@
       "id": "6",
       "title": "Camiseta Preta",
       "description": "A melhor camisa preta das camisas pretas",
-      "imagesUrl": ["/src/assets/black-shirt.png"],
+      "imagesUrl": [
+        "/src/assets/black-shirt.png"
+      ],
       "price": 199,
       "inStock": true,
-      "colors": ["black", "yellow", "blue", "red"],
-      "sizes": ["S", "M", "X"],
+      "colors": [
+        "black",
+        "yellow",
+        "blue",
+        "red"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "X"
+      ],
       "tag": "shirt",
       "category": "Tops"
     },
@@ -96,8 +150,18 @@
       ],
       "price": 449,
       "inStock": true,
-      "colors": ["black", "yellow", "blue", "red"],
-      "sizes": ["S", "M", "X", "XL"],
+      "colors": [
+        "black",
+        "yellow",
+        "blue",
+        "red"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "X",
+        "XL"
+      ],
       "tag": "Coats",
       "category": "Coats"
     },
@@ -112,8 +176,16 @@
       ],
       "price": 999,
       "inStock": true,
-      "colors": ["black", "yellow", "blue", "red"],
-      "sizes": ["M", "L"],
+      "colors": [
+        "black",
+        "yellow",
+        "blue",
+        "red"
+      ],
+      "sizes": [
+        "M",
+        "L"
+      ],
       "tag": "Coats",
       "category": "Coats"
     },
@@ -128,8 +200,19 @@
       ],
       "price": 1299,
       "inStock": true,
-      "colors": ["black", "yellow", "blue", "red"],
-      "sizes": ["S", "M", "L", "XL", "2XL"],
+      "colors": [
+        "black",
+        "yellow",
+        "blue",
+        "red"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
       "tag": "Coats",
       "category": "Coats"
     },
@@ -145,8 +228,15 @@
       ],
       "price": 120,
       "inStock": true,
-      "colors": ["black"],
-      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        "black"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "tag": "Bottoms",
       "category": "Bottoms"
     },
@@ -162,8 +252,16 @@
       ],
       "price": 260,
       "inStock": true,
-      "colors": ["black", "blue"],
-      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        "black",
+        "blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "tag": "Bottoms",
       "category": "Bottoms"
     },
@@ -179,8 +277,15 @@
       ],
       "price": 680,
       "inStock": true,
-      "colors": ["black"],
-      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        "black"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "tag": "Bottoms",
       "category": "Bottoms"
     },
@@ -193,8 +298,15 @@
       ],
       "price": 60,
       "inStock": true,
-      "colors": ["black"],
-      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        "black"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "tag": "Socks",
       "category": "Socks"
     },
@@ -208,8 +320,16 @@
       ],
       "price": 40,
       "inStock": true,
-      "colors": ["black", "blue"],
-      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        "black",
+        "blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "tag": "Socks",
       "category": "Socks"
     },
@@ -224,8 +344,16 @@
       ],
       "price": 89,
       "inStock": true,
-      "colors": ["red", "blue"],
-      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        "red",
+        "blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "tag": "Socks",
       "category": "Socks"
     }
@@ -246,6 +374,54 @@
     {
       "id": "8fa1",
       "email": "abc"
+    },
+    {
+      "id": "3310",
+      "email": "email2@email.com"
+    },
+    {
+      "id": "6e7d",
+      "email": "email3@email.com"
+    },
+    {
+      "id": "1566",
+      "email": "email4@email2.com"
+    },
+    {
+      "id": "4472",
+      "email": "outroemail@email.com"
+    },
+    {
+      "id": "7078",
+      "email": "2@out.com"
+    },
+    {
+      "id": "f596",
+      "email": "emailbom@email.com"
+    },
+    {
+      "id": "f01c",
+      "email": "testenovo@teste.com"
+    },
+    {
+      "id": "0084",
+      "email": "teste3@teste.com"
+    },
+    {
+      "id": "ff6a",
+      "email": "outroteste@teste.com"
+    },
+    {
+      "id": "d41b",
+      "email": "emailzao@email.com"
+    },
+    {
+      "id": "0685",
+      "email": "otimoemail@email.com"
+    },
+    {
+      "id": "b7cc",
+      "email": "email@email.com"
     }
   ],
   "OrderHistory": [

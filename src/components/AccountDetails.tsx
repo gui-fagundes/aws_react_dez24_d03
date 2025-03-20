@@ -3,7 +3,11 @@ import { useUser } from "@clerk/clerk-react";
 const AccountDetails = () => {
   const { user } = useUser();
   const userEmail = user?.primaryEmailAddress?.emailAddress;
-  const userFullName = `${user?.firstName} ${user?.lastName}`;
+  const userFullName = `${
+    user?.lastName
+      ? `${user?.firstName} ${user?.lastName}`
+      : `${user?.firstName}`
+  }`;
   const userImage = `${user?.imageUrl}`;
 
   return (

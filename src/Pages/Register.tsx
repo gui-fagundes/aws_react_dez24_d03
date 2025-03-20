@@ -165,7 +165,7 @@ const Register = () => {
   return (
     <div className="flex flex-col items-center ">
       <BreadCrumbs currentPage={"Sign Up"} />
-      {verifying ? <div>Check Your Email</div> : <h1></h1>}
+      {verifying ? <div className="my-10 text-h2 font-inter font-semibold">Check Your Email for the validation link</div> : <h1></h1>}
       <div className="w-80 h-111 flex flex-col  gap-3 my-10">
         <CustomGoogleOneTap sign={"signup"} />
         <div className="flex gap-3 items-center justify-center w-80">

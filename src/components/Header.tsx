@@ -1,8 +1,10 @@
-import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, useUser } from "@clerk/clerk-react";
 import { NavLink } from "react-router-dom";
 import { useAppSelector } from "../store";
 
 const Header = () => {
+  const {user} = useUser()
+  const userImage = user?.imageUrl
   const count = useAppSelector((state) => state.cart.count);
   return (
     <div className="h-32 flex flex-col items-center m-0 p-0 overflow-hidden fixed z-100">
@@ -48,7 +50,13 @@ const Header = () => {
             </NavLink>
           </SignedOut>
           <SignedIn>
-            <UserButton />
+            <NavLink to={"myaccount"}>
+          <img
+            src={userImage}
+            alt="userImage"
+            className="rounded-full max-w-6 max-h-6 border-1 border-bl-800"
+          />
+            </NavLink>
           </SignedIn>
         </div>
       </div>
