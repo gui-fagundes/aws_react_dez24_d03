@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
 import BreadCrumbs from "../components/BreadCrumbs";
 import { useEffect, useState } from "react";
-import { useUser } from "@clerk/clerk-react";
+import { SignedIn, useUser } from "@clerk/clerk-react";
+import { useAppDispatch, useAppSelector } from "../store";
+import api from "../services/api";
 
 const Checkout = () => {
   const { user } = useUser();
-  const [userFullName, setFullName] = useState(`${user?.firstName} ${user?.lastName}`);
-  const [userEmailAddress, setEmailAddress] = useState(user?.primaryEmailAddress?.emailAddress || "");
+  const [userFullName, setFullName] = useState(
+    `${user?.firstName} ${user?.lastName}`
+  );
+  const [userEmailAddress, setEmailAddress] = useState(
+    user?.primaryEmailAddress?.emailAddress || ""
+  );
   const [streetAddress, setStreetAddress] = useState("");
   const [city, setCity] = useState("");
   const [stateName, setStateName] = useState("");
@@ -14,6 +20,17 @@ const Checkout = () => {
   const [zipCode, setZipCode] = useState("");
   const [ziperror, setZipError] = useState("");
   const [disabled, setdisabled] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const dispatch = useAppDispatch();
+  const products = useAppSelector((state) => state.cart.items);
+  const orderSubTotal = useAppSelector((state) => state.cart.subTotal);
+  const [tax, setTaxes] = useState(orderSubTotal * 0.05);
+
+  useEffect(() => {
+    setTaxes(orderSubTotal * 0.05);
+    return;
+  }, [orderSubTotal]);
 
   const validateZip = (cep: string) => {
     const regex = /^\d+$/;
@@ -52,6 +69,21 @@ const Checkout = () => {
       setdisabled(false);
     }
   }, [ziperror]);
+
+  const handlePlaceOrder = async () => {
+    setLoading(true)
+      const response = api.get(`/OrderHistory/:${userEmailAddress}`)
+      if((await response).status == 404){
+        api.post(`/OrderHistory/`, {
+          id:userEmailAddress,
+          products
+        })
+      }
+
+
+  }
+
+
   return (
     <div className="flex flex-col w-screen">
       <BreadCrumbs currentPage="Checkout" />
@@ -77,7 +109,9 @@ const Checkout = () => {
                 }}
                 onBlur={(e) => checkCep(e.target.value)}
               />
-              {ziperror && <p className="text-red-500 text-sm mt-1">{ziperror}</p>}
+              {ziperror && (
+                <p className="text-red-500 text-sm mt-1">{ziperror}</p>
+              )}
             </div>
             <div className="flex flex-col flex-nowrap w-65">
               <label htmlFor="city">City</label>
@@ -151,27 +185,44 @@ const Checkout = () => {
             </div>
           </form>
         </div>
-        <div className="max-w-93 h-126 flex flex-col gap-3 justify-around">
-          <div className="">
-            <h1>Your Order</h1>
-          </div>
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-row justify-between">Edit Cart</div>
-            <div className="flex flex-row justify-between">Subtotal</div>
-            <div className="flex flex-row justify-between">Shipping</div>
-            <div className="flex flex-row justify-between">Tax</div>
-            <hr />
-            <div className="flex flex-row justify-between">Total</div>
-            <div>
+        <div className="max-w-93 w-full h-126 flex flex-col gap-3 justify-around">
+          <div className="flex flex-col gap-10">
+            <h1 className="font-inter font-semibold text-h5 text-bl-900">
+              Your Order
+            </h1>
+            <div className="flex flex-row justify-center self-end border-1 border-bl-200 rounded-md h-11 w-27 items-center ">
               <Link
-                to={"/sucessfullOrder"}
-                className={
-                  "flex flex-row grow-0 flex-nowrap justify-center font-medium text-p1 font-inter bg-bl-900 text-w-900 rounded-sm w-93 h-11 place-content-center px-4 py-2"
-                }
+                to={"/cart"}
+                className="w-full h-full flex items-center justify-center text-bl-500 text-p1 font-medium"
               >
-                Place Order
+                Edit Cart
               </Link>
             </div>
+          </div>
+          <div className="flex flex-col gap-3">
+            <div className="flex flex-row justify-between">
+              <h1>Subtotal</h1>
+              <h1>{`R$ ${orderSubTotal.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex flex-row justify-between">
+              <h1>Shipping</h1>
+              <h1>Free</h1>
+            </div>
+            <div className="flex flex-row justify-between">
+              <h1>Tax</h1>
+              <h1>{`R$ ${tax.toFixed(2)}`}</h1>
+            </div>
+            <hr />
+            <div className="flex flex-row justify-between">
+              <h1>Total</h1>
+              <h1>{`R$ ${(tax + orderSubTotal).toFixed(2)}`}</h1>
+            </div>
+            <div
+              className={
+                "flex flex-row flex-nowrap justify-center font-medium text-p1 font-inter bg-bl-900 text-w-900 rounded-sm h-11 items-center px-4 py-2 cursor-pointer"
+              }
+              onClick={() => handlePlaceOrder()}
+            >Place Order</div>
           </div>
         </div>
       </div>

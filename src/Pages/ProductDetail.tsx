@@ -15,6 +15,7 @@ const ProductDetail = () => {
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
   const [displayImage, setDisplayImage] = useState(0);
+  const [orderErrors, setOrderErrors] = useState('')
 
   const current = location.pathname;
 
@@ -82,6 +83,22 @@ const ProductDetail = () => {
     }
   };
 
+
+  const handleAddProductToCart = () => {
+    const cartItem = getCartItemInfo();
+    if(!selectedColor) {
+      setOrderErrors("Please Select a Color")
+      return
+    }
+    if(!selectedSize) {
+      setOrderErrors("Please Select a Size")
+      return
+    }
+    setOrderErrors('')
+    dispatch(CartSlice.actions.addItemToCart(cartItem));
+  }
+
+
   return (
     <div className="flex flex-col justify-center items-center">
       <BreadCrumbs currentPage={product.title} />
@@ -148,16 +165,18 @@ const ProductDetail = () => {
                 +
               </div>
             </div>
+            <div>
 
             <div
               className="rounded-md bg-bl-900 text-w-900 w-62 h-11 cursor-pointer text-center content-center"
               onClick={() => {
-                const cartItem = getCartItemInfo();
-                dispatch(CartSlice.actions.addItemToCart(cartItem));
+                handleAddProductToCart()
               }}
-            >
+              >
               Add to Cart
             </div>
+            {orderErrors && <p className="font-inter text-l1 text-r-900 text-center">{orderErrors}</p>}
+              </div>
             <h1 className="font-inter font-medium text-bl-500 text-l1">
               — Free shipping on orders $100 +
             </h1>

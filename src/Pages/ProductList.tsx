@@ -19,25 +19,30 @@ const ProductList = () => {
   const [products, setProducts] = useState<productsProps[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [checkedValue, setCheckedValue] = useState("all");
-  const [priceValue, setPriceValue] = useState(2000)
+  const [priceValue, setPriceValue] = useState(2000);
   const [page, setPage] = useState(1);
-  const [maxProducts, setMaxProducts] = useState(0)
+  const [maxProducts, setMaxProducts] = useState(0);
+  const [maxPage, setMaxPage] = useState(Math.ceil(maxProducts / 9));
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         if (checkedValue === "all") {
-          const response = await api.get(`/products?price_lt=${priceValue}&_page=${page}&_per_page=9`);
+          const response = await api.get(
+            `/products?price_lt=${priceValue}&_page=${page}&_per_page=9`
+          );
           setProducts(response.data.data);
-          const size = await api.get(`/products?price_lt=${priceValue}`)
-          setMaxProducts(size.data.length)
+          const size = await api.get(`/products?price_lt=${priceValue}`);
+          setMaxProducts(size.data.length);
         } else {
           const response = await api.get(
             `/products?category=${checkedValue}&price_lt=${priceValue}&_page=${page}&_per_page=9`
           );
           setProducts(response.data.data);
-          const size = await api.get(`/products?category=${checkedValue}&price_lt=${priceValue}`)
-          setMaxProducts(size.data.length)
+          const size = await api.get(
+            `/products?category=${checkedValue}&price_lt=${priceValue}`
+          );
+          setMaxProducts(size.data.length);
         }
       } catch (error) {
         console.error(error);
@@ -55,10 +60,18 @@ const ProductList = () => {
   };
 
   const getProductCount = () => {
-    return <>
-    {`Showing ${1 + ((page-1)*9)} to ${((page-1)*9) + products.length} of ${maxProducts} Products`}
-    </>
-  }
+    return (
+      <>
+        {`Showing ${1 + (page - 1) * 9} to ${
+          (page - 1) * 9 + products.length
+        } of ${maxProducts} Products`}
+      </>
+    );
+  };
+
+  useEffect(()=> {
+    setMaxPage(Math.ceil(maxProducts / 9))
+  },[maxProducts])
 
   return (
     <div className="flex flex-col">
@@ -85,25 +98,24 @@ const ProductList = () => {
           ))}
 
           <div>
-       <label
-            htmlFor="priceRange"
-            className="block mb-2 text-sm font-inter font-medium text-p1 text-gray-900 dark:text-white"
-          >
-            Price
-          </label>
-          <input
-            id="priceRange"
-            type="range"
-            min={100}
-            max={1500}
-            step={10}
-            value={priceValue}
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer "
-            onChange={(e) => setPriceValue(parseInt(e.target.value))}
-          />
-          <div>{`R$ ${priceValue}`}</div>      
+            <label
+              htmlFor="priceRange"
+              className="block mb-2 text-sm font-inter font-medium text-p1 text-gray-900 dark:text-white"
+            >
+              Price
+            </label>
+            <input
+              id="priceRange"
+              type="range"
+              min={100}
+              max={1500}
+              step={10}
+              value={priceValue}
+              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer "
+              onChange={(e) => setPriceValue(parseInt(e.target.value))}
+            />
+            <div>{`R$ ${priceValue}`}</div>
           </div>
-         
         </div>
         <div className="flex flex-col w-full py-5 md:py-15 md:pr-10 gap-3 px-20 md:pl-0">
           <h1 className="text-p1 font-inter font-medium text-bl-900">
@@ -153,17 +165,20 @@ const ProductList = () => {
             <div
               className="text-center content-center cursor-pointer w-10 h-10"
               onClick={() => {
-                setPage(page == 1 ? 1 : page - 1);
+                if (page == 1) return;
+                setPage(page - 1);
+                window.scrollTo(0, 0);
               }}
             >
-              {" "}
-              {`<`}{" "}
+              {`<`}
             </div>
             <div className="h-full text-center content-center">{page}</div>
             <div
               className="text-center content-center cursor-pointer w-10 h-10"
               onClick={() => {
+                if (page == maxPage) return;
                 setPage(page + 1);
+                window.scrollTo(0, 0);
               }}
             >{`>`}</div>
           </div>
