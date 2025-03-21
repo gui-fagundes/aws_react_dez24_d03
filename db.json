@@ -471,6 +471,16 @@
           "productPrice": 140,
           "productColor": "yellow",
           "productSize": "S"
+        },
+        {
+          "orderId": "d6ojj9io2ba",
+          "productId": "2",
+          "productTitle": "Tecnologic T-shirt",
+          "productImg": "https://http2.mlstatic.com/D_NQ_NP_703408-MLB70091078790_062023-O-camiseta-masculina-camisas-slim-voker-100-algodo-atacado.webp",
+          "productQuantity": 2,
+          "productPrice": 998,
+          "productColor": "blue",
+          "productSize": "M"
         }
       ]
     }
