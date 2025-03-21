@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const Page404 = () => {
   return (
-    <div className="flex flex-col items-center mt-32  gap-3 mb-10">
+    <div className="flex flex-col items-center mt-50  gap-3 mb-32">
       <h1 className="font-bold font-inter text-9xl text-bl-900">404</h1>
       <p className="font-light font-inter text-p1 text-bl-600">
         Something went wrong.

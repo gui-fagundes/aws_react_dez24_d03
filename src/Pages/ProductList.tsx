@@ -19,10 +19,11 @@ const ProductList = () => {
   const [products, setProducts] = useState<productsProps[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [checkedValue, setCheckedValue] = useState("all");
-  const [priceValue, setPriceValue] = useState(2000);
+  const [priceValue, setPriceValue] = useState(1300);
   const [page, setPage] = useState(1);
   const [maxProducts, setMaxProducts] = useState(0);
   const [maxPage, setMaxPage] = useState(Math.ceil(maxProducts / 9));
+  const [maxPrice, setMaxPrice] = useState(0)
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -34,6 +35,8 @@ const ProductList = () => {
           setProducts(response.data.data);
           const size = await api.get(`/products?price_lt=${priceValue}`);
           setMaxProducts(size.data.length);
+          const price = await api.get('/products?_sort=-price&_limit=1');
+          setMaxPrice(price.data[0].price)
         } else {
           const response = await api.get(
             `/products?category=${checkedValue}&price_lt=${priceValue}&_page=${page}&_per_page=9`
@@ -43,6 +46,8 @@ const ProductList = () => {
             `/products?category=${checkedValue}&price_lt=${priceValue}`
           );
           setMaxProducts(size.data.length);
+          const price = await api.get('/products?_sort=-price&_limit=1');
+          setMaxPrice(price.data[0].price)
         }
       } catch (error) {
         console.error(error);
@@ -50,6 +55,9 @@ const ProductList = () => {
     };
     fetchProducts();
   }, [page, checkedValue, inputValue, priceValue]);
+
+
+
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -107,14 +115,14 @@ const ProductList = () => {
             <input
               id="priceRange"
               type="range"
-              min={100}
-              max={1500}
-              step={10}
+              min={10}
+              max={(maxPrice + 1)}
+              step={1}
               value={priceValue}
               className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer "
               onChange={(e) => setPriceValue(parseInt(e.target.value))}
             />
-            <div>{`R$ ${priceValue}`}</div>
+            <div>{`$ ${priceValue}`}</div>
           </div>
         </div>
         <div className="flex flex-col w-full py-5 md:py-15 md:pr-10 gap-3 px-20 md:pl-0">

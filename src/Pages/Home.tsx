@@ -17,7 +17,7 @@ const Home = () => {
           <Link
             to={"/products"}
             className={
-              "flex flex-row grow-0 flex-nowrap justify-center font-medium text-p1 font-inter bg-bl-900 text-w-900 rounded-sm w-[183px] max-w-[183px] h-11 place-content-center px-4 py-2"
+              "flex flex-row grow-0 flex-nowrap justify-center items-center font-medium text-p1 font-inter bg-bl-900 text-w-900 rounded-sm w-[183px] max-w-[183px] h-11 px-4 py-2"
             }
           >
             View Collection
@@ -91,7 +91,7 @@ const Home = () => {
           <Link
             to={"/products"}
             className={
-              "flex flex-row grow-0 flex-nowrap justify-center font-medium text-P1 font-inter bg-bl-900 text-w-900 rounded-sm w-[183px] max-w-[183px] h-11 place-content-center px-4 py-2"
+              "flex flex-row grow-0 flex-nowrap justify-center items-center font-medium text-p1 font-inter bg-bl-900 text-w-900 rounded-sm w-[183px] max-w-[183px] h-11 px-4 py-2"
             }
           >
             Start Browsing

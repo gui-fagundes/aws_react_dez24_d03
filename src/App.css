@@ -1,0 +1,14 @@
+#priceRange {
+    background-color: #474b57;
+    outline:none;
+    height: 4px;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 2px solid white;
+    height: 16px;
+    width: 16px;
+    border-radius:100%;
+    background: black;
+    cursor: pointer;
+}

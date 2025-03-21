@@ -3,6 +3,7 @@ import BreadCrumbs from "../components/BreadCrumbs";
 import { FormEvent, useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import CustomGoogleOneTap from "../components/CustomGoogleOneTap";
+import api from "../services/api";
 
 const Register = () => {
   const [userFullName, setFullName] = useState("");
@@ -124,6 +125,13 @@ const Register = () => {
           redirectUrl: "http://localhost:5173/",
         });
         setVerifying(true);
+        setTimeout(() => {
+          api.post("/OrderHistory", {
+            id: userEmail,
+            history: [],
+          });
+        }, 2000);
+
         await signUp.attemptVerification;
       } catch (error: any) {
         if (error.errors[0].code === "form_identifier_exists") {
@@ -165,7 +173,13 @@ const Register = () => {
   return (
     <div className="flex flex-col items-center ">
       <BreadCrumbs currentPage={"Sign Up"} />
-      {verifying ? <div className="my-10 text-h2 font-inter font-semibold">Check Your Email for the validation link</div> : <h1></h1>}
+      {verifying ? (
+        <div className="my-10 text-h2 font-inter font-semibold">
+          Check Your Email for the validation link
+        </div>
+      ) : (
+        <h1></h1>
+      )}
       <div className="w-80 h-111 flex flex-col  gap-3 my-10">
         <CustomGoogleOneTap sign={"signup"} />
         <div className="flex gap-3 items-center justify-center w-80">

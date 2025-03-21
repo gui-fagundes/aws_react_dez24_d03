@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from "react";
-import BreadCrumbs from "../components/BreadCrumbs";
 import Cards from "../components/Cards";
 import api from "../services/api";
 import { useAppDispatch } from "../store";
@@ -110,8 +109,19 @@ const ProductDetail = () => {
       </div>
 
       <div className="w-273 max-w-screen flex flex-row justify-center h-136 mt-10">
-        <div className="bg-bl-100 justify-center items-center max-w-[50%]">
-          <img src={product.imagesUrl[0]} alt="" />
+        <div className="bg-bl-100 justify-center items-center max-w-[50%] relative">
+          <img src="/src/icons/Chevron Right.png" alt="NextImage" className="absolute top-[50%] right-0 cursor-pointer h-7 w-6" 
+          onClick={() => {
+            if (displayImage == (product.imagesUrl.length - 1)) return
+            setDisplayImage(displayImage + 1);
+          }} />
+          <img src={product.imagesUrl[displayImage]} alt="" />
+
+          <img src="/src/icons/Chevron Left.png" alt="PreviousImage" className="absolute top-[50%] left-0 cursor-pointer h-7 w-6" 
+          onClick={() => {
+            if (displayImage == 0) return
+            setDisplayImage(displayImage - 1);
+          }} />
         </div>
         <div className="flex flex-col w-136 max-w-[50%] items-end">
           <div className="flex flex-col items-start justify-evenly gap-3 text-start max-w-109 mr-20 py-4">
