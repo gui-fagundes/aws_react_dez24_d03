@@ -431,7 +431,16 @@
     },
     {
       "id": "guilhermelemosfurg@gmail.com",
-      "history": []
+      "history": [
+        {
+          "productId": "1",
+          "productImg": "https://http2.mlstatic.com/D_NQ_NP_889662-MLB70090768890_062023-O-camiseta-masculina-camisas-slim-voker-100-algodo-atacado.webp",
+          "productQuantity": 1,
+          "productPrice": 140,
+          "productColor": "yellow",
+          "productSize": "M"
+        }
+      ]
     }
   ]
 }

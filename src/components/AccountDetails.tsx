@@ -34,6 +34,7 @@ const AccountDetails = () => {
           Full Name
         </label>
         <input
+          id="userFullName"
           name="userFullName"
           type="text"
           value={userFullName}
@@ -49,6 +50,7 @@ const AccountDetails = () => {
           Email
         </label>
         <input
+          id="userEmail"
           name="userEmail"
           type="text"
           value={userEmail}

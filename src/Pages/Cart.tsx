@@ -1,9 +1,10 @@
 import BreadCrumbs from "../components/BreadCrumbs";
-import { SignedIn, SignedOut } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, useUser } from "@clerk/clerk-react";
 import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store";
 import { CartSlice } from "../store/cart/cartSlice";
 import { useEffect, useState } from "react";
+import api from "../services/api";
 
 const Cart = () => {
   const dispatch = useAppDispatch();
@@ -15,6 +16,9 @@ const Cart = () => {
     setTaxes(orderSubTotal * 0.05);
     return;
   }, [orderSubTotal]);
+
+
+
 
   const getColor = (color: string) => {
     switch (color) {

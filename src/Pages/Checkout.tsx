@@ -72,15 +72,22 @@ const Checkout = () => {
 
   const handlePlaceOrder = async () => {
     setLoading(true)
-      const response = api.get(`/OrderHistory/:${userEmailAddress}`)
-      if((await response).status == 404){
-        api.post(`/OrderHistory/`, {
-          id:userEmailAddress,
-          products
-        })
-      }
 
-
+    const history = await (await api.get(`/OrderHistory/${user?.primaryEmailAddress?.emailAddress}`)).data.history
+    await products.map((product) => {
+      history.push({
+        productId : product.productId,
+        productImg : product.imagesUrl[0],
+        productQuantity : product.quantity,
+        productPrice : (product.price * product.quantity),
+        productColor : product.color,
+        productSize : product.size
+      })
+    })
+    ;
+    api.patch(`/OrderHistory/${user?.primaryEmailAddress?.emailAddress}`, {
+      history: history
+    })  
   }
 
 

@@ -14,13 +14,14 @@ const OrderHistory = () => {
       const response = await api.get(`OrderHistory/${userEmail}`)
       setHistory(response.data.history)
     }
-
     getHistory()
   },[])
   return (
     <div className="flex flex-col justify-center gap-3 items-center">
 
-    {history.length > 0 ? <div>History</div> 
+    {history.length > 0 ? <div className="flex flex-col items-center gap-3">
+
+    </div> 
     : 
     <div className="flex flex-col items-center gap-3">
       <img src="/src/assets/Empty State.png" alt="" className="w-16 h-16" />
