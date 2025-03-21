@@ -23,7 +23,7 @@ const ProductList = () => {
   const [page, setPage] = useState(1);
   const [maxProducts, setMaxProducts] = useState(0);
   const [maxPage, setMaxPage] = useState(Math.ceil(maxProducts / 9));
-  const [maxPrice, setMaxPrice] = useState(0)
+  const [maxPrice, setMaxPrice] = useState(0);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -33,23 +33,21 @@ const ProductList = () => {
             `/products?price_lt=${priceValue}&_page=${page}&_per_page=9`
           );
           setProducts(response.data.data);
-          setPage(1)
           const size = await api.get(`/products?price_lt=${priceValue}`);
           setMaxProducts(size.data.length);
-          const price = await api.get('/products?_sort=-price&_limit=1');
-          setMaxPrice(price.data[0].price)
+          const price = await api.get("/products?_sort=-price&_limit=1");
+          setMaxPrice(price.data[0].price);
         } else {
           const response = await api.get(
             `/products?category=${checkedValue}&price_lt=${priceValue}&_page=${page}&_per_page=9`
           );
           setProducts(response.data.data);
-          setPage(1)
           const size = await api.get(
             `/products?category=${checkedValue}&price_lt=${priceValue}`
           );
           setMaxProducts(size.data.length);
-          const price = await api.get('/products?_sort=-price&_limit=1');
-          setMaxPrice(price.data[0].price)
+          const price = await api.get("/products?_sort=-price&_limit=1");
+          setMaxPrice(price.data[0].price);
         }
       } catch (error) {
         console.error(error);
@@ -58,8 +56,14 @@ const ProductList = () => {
     fetchProducts();
   }, [page, checkedValue, inputValue, priceValue]);
 
-
-
+  useEffect(() => {
+    const pageHandler = () => {
+      if (maxProducts > 9) {
+        setPage(1);
+      }
+    };
+    pageHandler();
+  }, [maxProducts]);
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -79,16 +83,18 @@ const ProductList = () => {
     );
   };
 
-  useEffect(()=> {
-    setMaxPage(Math.ceil(maxProducts / 9))
-  },[maxProducts])
+  useEffect(() => {
+    setMaxPage(Math.ceil(maxProducts / 9));
+  }, [maxProducts]);
 
   return (
     <div className="flex flex-col max-w-screen">
       <BreadCrumbsSmall currentPage="Search" />
       <div className="flex flex-col md:flex-row max-w-full">
         <div className="flex flex-row flex-wrap md:flex-col md:h-135 md:border-1 max-w-screen md:w-62 border-bl-100 rounded-md mx-30 my-10 gap-3 py-5 px-3">
-          <h1 className="hidden md:flex font-inter text-p1 text-bl-900 font-medium">Categories</h1>
+          <h1 className="hidden md:flex font-inter text-p1 text-bl-900 font-medium">
+            Categories
+          </h1>
           {["Tops", "Bottoms", "Coats", "Socks", "all"].map((category) => (
             <label
               key={category}
@@ -118,7 +124,7 @@ const ProductList = () => {
               id="priceRange"
               type="range"
               min={10}
-              max={(maxPrice + 1)}
+              max={maxPrice + 1}
               step={1}
               value={priceValue}
               className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer "
@@ -134,25 +140,33 @@ const ProductList = () => {
           <div className="flex flex-row justify-between w-full flex-wrap gap-3">
             <div className="flex gap-3">
               <h1 className="font-inter text-l1 border-1 border-bl-100 rounded-4xl max-w-28 max-h-9 text-center px-2 flex justify-between items-center gap-2">
-                {`${checkedValue === "all" ? "None" : checkedValue}`}  <img src="/src/icons/X.svg" alt=""/>
+                {`${checkedValue === "all" ? "None" : checkedValue}`}{" "}
+                <img src="/src/icons/X.svg" alt="" />
               </h1>
               <h1
                 className={`font-inter text-l1 border-1 border-bl-100 rounded-4xl max-w-28 max-h-9 text-center px-2 justify-between items-center gap-2 ${
                   inputValue ? "flex" : "hidden"
                 }`}
-               onClick={() => setInputValue('')} >
-                {`${inputValue ? inputValue : ""}`}  <img src="/src/icons/X.svg" alt=""/>
+                onClick={() => setInputValue("")}
+              >
+                {`${inputValue ? inputValue : ""}`}{" "}
+                <img src="/src/icons/X.svg" alt="" />
               </h1>
               <h1
                 className={`font-inter text-l1 border-1 border-bl-100 rounded-4xl max-w-28 max-h-9 text-center px-2 justify-between items-center gap-2 ${
                   priceValue ? "flex" : "hidden"
                 }`}
               >
-                {`${priceValue ? `$ ${priceValue}` : ""}`} <img src="/src/icons/X.svg" alt=""/>
+                {`${priceValue ? `$ ${priceValue}` : ""}`}{" "}
+                <img src="/src/icons/X.svg" alt="" />
               </h1>
             </div>
             <div className="flex flex-col relative">
-              <img src="/src/icons/Search.png" alt="" className="absolute w-6 h-6 top-2 left-1" />
+              <img
+                src="/src/icons/Search.png"
+                alt=""
+                className="absolute w-6 h-6 top-2 left-1"
+              />
               <input
                 type="text"
                 placeholder="Search Products"
@@ -173,7 +187,7 @@ const ProductList = () => {
               return <Card product={product} key={product.id} />;
             })}
           </div>
-          
+
           <div className="flex flex-row flex-nowrap w-38 h-11 border-1 border-w-200 rounded-md self-center justify-between text-center">
             <div
               className="text-center cursor-pointer w-10 h-10 flex justify-center items-center"
@@ -183,9 +197,15 @@ const ProductList = () => {
                 window.scrollTo(0, 0);
               }}
             >
-              <img src="/src/icons/Chevron Left.png" alt="previous page" className="h-6 w-6" />
+              <img
+                src="/src/icons/Chevron Left.png"
+                alt="previous page"
+                className="h-6 w-6"
+              />
             </div>
-            <div className=" text-center flex items-center justify-center bg-w-100 w-10 my-1 rounded-sm">{page}</div>
+            <div className=" text-center flex items-center justify-center bg-w-100 w-10 my-1 rounded-sm">
+              {page}
+            </div>
             <div
               className="text-center cursor-pointer w-10 h-10 flex justify-center items-center"
               onClick={() => {
@@ -193,7 +213,13 @@ const ProductList = () => {
                 setPage(page + 1);
                 window.scrollTo(0, 0);
               }}
-            ><img src="/src/icons/Chevron Right.png" alt="next page" className="w-6 h-6" /></div>
+            >
+              <img
+                src="/src/icons/Chevron Right.png"
+                alt="next page"
+                className="w-6 h-6"
+              />
+            </div>
           </div>
         </div>
       </div>

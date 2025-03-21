@@ -10,18 +10,8 @@
       ],
       "price": 140,
       "inStock": true,
-      "colors": [
-        "black",
-        "yellow",
-        "red",
-        "blue"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["black", "yellow", "red", "blue"],
+      "sizes": ["S", "M", "L", "XL"],
       "tag": "shirt",
       "category": "Tops"
     },
@@ -36,17 +26,8 @@
       ],
       "price": 499,
       "inStock": true,
-      "colors": [
-        "black",
-        "blue",
-        "red"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["black", "blue", "red"],
+      "sizes": ["S", "M", "L", "XL"],
       "tag": "shirt",
       "category": "Tops"
     },
@@ -61,16 +42,8 @@
       ],
       "price": 999,
       "inStock": false,
-      "colors": [
-        "black",
-        "blue"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["black", "blue"],
+      "sizes": ["S", "M", "L", "XL"],
       "tag": "shirt",
       "category": "Tops"
     },
@@ -83,59 +56,40 @@
       ],
       "price": 89,
       "inStock": true,
-      "colors": [
-        "black",
-        "yellow"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
+      "colors": ["black", "yellow"],
+      "sizes": ["S", "M", "L"],
       "tag": "shirt",
       "category": "Tops"
     },
     {
       "id": "5",
-      "title": "Camiseta Preta",
-      "description": "A melhor camisa preta das camisas pretas",
+      "title": "Long Sleeve Shirt",
+      "description": "Great for the winter cold",
       "imagesUrl": [
-        "/src/assets/black-shirt.png"
+        "https://http2.mlstatic.com/D_NQ_NP_770421-MLB51933552342_102022-O-camiseta-camisa-termica-proteco-solar-uv-50-treino-gold.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_646121-MLB51933499689_102022-O-camiseta-camisa-termica-proteco-solar-uv-50-treino-gold.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_755167-MLB51933561312_102022-O-camiseta-camisa-termica-proteco-solar-uv-50-treino-gold.webp"
       ],
       "price": 199,
       "inStock": true,
-      "colors": [
-        "black",
-        "yellow"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "X"
-      ],
+      "colors": ["black", "yellow"],
+      "sizes": ["S", "M", "X"],
       "tag": "shirt",
       "category": "Tops"
     },
     {
       "id": "6",
-      "title": "Camiseta Preta",
-      "description": "A melhor camisa preta das camisas pretas",
+      "title": "Sleeve Shirt",
+      "description": "Good protection agains winter winds",
       "imagesUrl": [
-        "/src/assets/black-shirt.png"
+        "https://http2.mlstatic.com/D_NQ_NP_646121-MLB51933499689_102022-O-camiseta-camisa-termica-proteco-solar-uv-50-treino-gold.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_770421-MLB51933552342_102022-O-camiseta-camisa-termica-proteco-solar-uv-50-treino-gold.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_755167-MLB51933561312_102022-O-camiseta-camisa-termica-proteco-solar-uv-50-treino-gold.webp"
       ],
       "price": 199,
       "inStock": true,
-      "colors": [
-        "black",
-        "yellow",
-        "blue",
-        "red"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "X"
-      ],
+      "colors": ["black", "yellow", "blue", "red"],
+      "sizes": ["S", "M", "X"],
       "tag": "shirt",
       "category": "Tops"
     },
@@ -150,18 +104,8 @@
       ],
       "price": 449,
       "inStock": true,
-      "colors": [
-        "black",
-        "yellow",
-        "blue",
-        "red"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "X",
-        "XL"
-      ],
+      "colors": ["black", "yellow", "blue", "red"],
+      "sizes": ["S", "M", "X", "XL"],
       "tag": "Coats",
       "category": "Coats"
     },
@@ -176,16 +120,8 @@
       ],
       "price": 999,
       "inStock": true,
-      "colors": [
-        "black",
-        "yellow",
-        "blue",
-        "red"
-      ],
-      "sizes": [
-        "M",
-        "L"
-      ],
+      "colors": ["black", "yellow", "blue", "red"],
+      "sizes": ["M", "L"],
       "tag": "Coats",
       "category": "Coats"
     },
@@ -200,19 +136,8 @@
       ],
       "price": 1299,
       "inStock": true,
-      "colors": [
-        "black",
-        "yellow",
-        "blue",
-        "red"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "2XL"
-      ],
+      "colors": ["black", "yellow", "blue", "red"],
+      "sizes": ["S", "M", "L", "XL", "2XL"],
       "tag": "Coats",
       "category": "Coats"
     },
@@ -228,15 +153,8 @@
       ],
       "price": 120,
       "inStock": true,
-      "colors": [
-        "black"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["black"],
+      "sizes": ["S", "M", "L", "XL"],
       "tag": "Bottoms",
       "category": "Bottoms"
     },
@@ -252,16 +170,8 @@
       ],
       "price": 260,
       "inStock": true,
-      "colors": [
-        "black",
-        "blue"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["black", "blue"],
+      "sizes": ["S", "M", "L", "XL"],
       "tag": "Bottoms",
       "category": "Bottoms"
     },
@@ -277,15 +187,8 @@
       ],
       "price": 680,
       "inStock": true,
-      "colors": [
-        "black"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["black"],
+      "sizes": ["S", "M", "L", "XL"],
       "tag": "Bottoms",
       "category": "Bottoms"
     },
@@ -298,15 +201,8 @@
       ],
       "price": 60,
       "inStock": true,
-      "colors": [
-        "black"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["black"],
+      "sizes": ["S", "M", "L", "XL"],
       "tag": "Socks",
       "category": "Socks"
     },
@@ -320,16 +216,8 @@
       ],
       "price": 40,
       "inStock": true,
-      "colors": [
-        "black",
-        "blue"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["black", "blue"],
+      "sizes": ["S", "M", "L", "XL"],
       "tag": "Socks",
       "category": "Socks"
     },
@@ -344,16 +232,8 @@
       ],
       "price": 89,
       "inStock": true,
-      "colors": [
-        "red",
-        "blue"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "colors": ["red", "blue"],
+      "sizes": ["S", "M", "L", "XL"],
       "tag": "Socks",
       "category": "Socks"
     }

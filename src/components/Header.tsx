@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useAppSelector } from "../store";
 
 const Header = () => {
-  const {user} = useUser()
-  const userImage = user?.imageUrl
+  const { user } = useUser();
+  const userImage = user?.imageUrl;
   const count = useAppSelector((state) => state.cart.count);
   return (
     <div className="h-32 flex flex-col items-center m-0 p-0 overflow-hidden fixed z-100 max-w-screen drop-shadow-xl ">
@@ -27,9 +27,50 @@ const Header = () => {
             </div>
           </NavLink>
           <div className="flex flex-row items-center gap-5 font-inter text-bl-500">
-            <NavLink to={"/"} className={"hidden md:flex"}>Home</NavLink>
-            <NavLink to={"/products"}>Shop</NavLink>
-            <NavLink to={"/about"} className={"hidden md:flex"}>About</NavLink>
+            <NavLink
+              to={"/"}
+              className={"hidden md:flex"}
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      textDecoration: "none",
+                      color: "#333845",
+                      textShadow: "1px",
+                    }
+                  : {}
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to={"/products"}
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      textDecoration: "none",
+                      color: "#333845",
+                      textShadow: "1px",
+                    }
+                  : {}
+              }
+            >
+              Shop
+            </NavLink>
+            <NavLink
+              to={"/about"}
+              className={"hidden md:flex"}
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      textDecoration: "none",
+                      color: "#333845",
+                      textShadow: "1px",
+                    }
+                  : {}
+              }
+            >
+              About
+            </NavLink>
           </div>
         </div>
 
@@ -51,11 +92,11 @@ const Header = () => {
           </SignedOut>
           <SignedIn>
             <NavLink to={"myaccount"}>
-          <img
-            src={userImage}
-            alt="userImage"
-            className="rounded-full max-w-6 max-h-6 border-1 border-bl-800"
-          />
+              <img
+                src={userImage}
+                alt="userImage"
+                className="rounded-full max-w-6 max-h-6 border-1 border-bl-800"
+              />
             </NavLink>
           </SignedIn>
         </div>
