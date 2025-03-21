@@ -1,16 +1,17 @@
 import { Link, useNavigate } from "react-router-dom";
 import BreadCrumbs from "../components/BreadCrumbs";
 import { useEffect, useState } from "react";
-import { SignedIn, useUser } from "@clerk/clerk-react";
+import {  useUser } from "@clerk/clerk-react";
 import { useAppDispatch, useAppSelector } from "../store";
 import api from "../services/api";
+import { cartActions } from "../store/cart/cartSlice";
 
 const Checkout = () => {
   const { user } = useUser();
-  const [userFullName, setFullName] = useState(
+  const [userFullName] = useState(
     `${user?.firstName} ${user?.lastName}`
   );
-  const [userEmailAddress, setEmailAddress] = useState(
+  const [userEmailAddress] = useState(
     user?.primaryEmailAddress?.emailAddress || ""
   );
   const [streetAddress, setStreetAddress] = useState("");
@@ -78,6 +79,7 @@ const Checkout = () => {
     const history = await (await api.get(`/OrderHistory/${user?.primaryEmailAddress?.emailAddress}`)).data.history
     await products.map((product) => {
       history.push({
+        orderId : product.id,
         productId : product.productId,
         productTitle : product.title,
         productImg : product.imagesUrl[0],
@@ -88,6 +90,7 @@ const Checkout = () => {
       })
     })
     ;
+    dispatch(cartActions.clearCart())
     api.patch(`/OrderHistory/${user?.primaryEmailAddress?.emailAddress}`, {
       history: history
     })

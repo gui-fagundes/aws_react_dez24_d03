@@ -7,7 +7,7 @@ const Header = () => {
   const userImage = user?.imageUrl
   const count = useAppSelector((state) => state.cart.count);
   return (
-    <div className="h-32 flex flex-col items-center m-0 p-0 overflow-hidden fixed z-100 max-w-screen drop-shadow-xl">
+    <div className="h-32 flex flex-col items-center m-0 p-0 overflow-hidden fixed z-100 max-w-screen drop-shadow-xl ">
       <div className="h-10 min-w-full bg-black text-white text-center pt-2">
         <h1>
           Get 25% OFF on your first order.{" "}

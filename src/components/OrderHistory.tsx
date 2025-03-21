@@ -21,7 +21,7 @@ const OrderHistory = () => {
         <div className="flex flex-col items-center self-start gap-3 max-w-full px-3">
           <h1 className="self-start mb-10">Orders</h1>
           {history.map((order) => (
-            <div className="shadow-sm flex flex-nowrap items-center gap-10 justify-around max-w-155 h-20 px-2 font-inter" key={order.productId}>
+            <div className="shadow-sm flex flex-nowrap items-center gap-10 justify-around max-w-155 h-20 px-2 font-inter" key={order.orderId}>
               <img
                 src={order.productImg}
                 alt="Product Image"
@@ -29,13 +29,13 @@ const OrderHistory = () => {
               />
               <div className="flex flex-col flex-nowrap gap-3">
                 <h1 className="text-p1 font-medium text-bl-900" >{order.productTitle}</h1>
-                <div className="flex gap-3 font-medium text-bl-500 text-l1">
+                <div className="md:flex gap-3 font-medium text-bl-500 text-l1 hidden">
                   <h1>Color: {order.productColor}</h1>
                   <h1>Size: {order.productSize}</h1>
                 </div>
               </div>
               <div className="flex gap-8 items-center font-medium text-bl-500 text-l1">
-                <h1>Amount: {order.productQuantity}</h1>
+                <h1 className="hidden md:flex" >Amount: {order.productQuantity}</h1>
                 <h1 className="text-p1 font-medium text-bl-900">{`Order Total: $${order.productPrice}`}</h1>
                 <Link
                   to={`/products/${order.productId}`}

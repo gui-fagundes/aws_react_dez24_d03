@@ -171,6 +171,7 @@ const ProductList = () => {
               return <Card product={product} key={product.id} />;
             })}
           </div>
+          
           <div className="flex flex-row flex-nowrap w-38 h-11 border-1 border-w-200 rounded-md self-center justify-between text-center">
             <div
               className="text-center cursor-pointer w-10 h-10 flex justify-center items-center"

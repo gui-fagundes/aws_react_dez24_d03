@@ -140,9 +140,9 @@ const Footer = () => {
         <div className="flex flex-col gap-10 text-bl-300 text-p1 font-medium font-inter">
           <div>ACCEPTED PAYMENTS</div>
           <div className="flex flex-row gap-3">
-            <img src="/src/icons/Mastercard.png" alt="" />
-            <img src="/src/icons/Amex.png" alt="" />
-            <img src="/src/icons/Visa.png" alt="" />
+            <img src="/src/icons/Mastercard.png" alt="" className=" grayscale-100" />
+            <img src="/src/icons/Amex.png" alt=""  className="grayscale-100"/>
+            <img src="/src/icons/Visa.png" alt="" className="grayscale-100"/>
           </div>
         </div>
       </div>

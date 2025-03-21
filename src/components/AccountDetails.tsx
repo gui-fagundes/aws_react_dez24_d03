@@ -11,7 +11,7 @@ const AccountDetails = () => {
   const userImage = `${user?.imageUrl}`;
 
   return (
-    <div className="flex flex-col gap-5 px-10">
+    <div className="flex flex-col gap-5 px-10 mb-10">
       <div className="flex flex-col">
         <h1 className="font-inter font-semibold text-h5 text-bl-900">
           Account Details

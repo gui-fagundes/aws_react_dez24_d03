@@ -17,9 +17,6 @@ const Cart = () => {
     return;
   }, [orderSubTotal]);
 
-
-
-
   const getColor = (color: string) => {
     switch (color) {
       case "black":
@@ -42,9 +39,9 @@ const Cart = () => {
   return (
     <div className="flex flex-col gap-3 max-w-screen">
       <BreadCrumbs currentPage="Cart" />
-      <div className="flex flex-row flex-wrap max-w-screen justify-center gap-3">
+      <div className="flex flex-col items-center md:items-start md:flex-row flex-wrap max-w-screen justify-center gap-3">
         <div className="flex flex-col gap-3">
-          <div className="border-b-1 border-bl-100 w-157 mt-10 py-4">
+          <div className="border-b-1 border-bl-100 md:w-157 w-60 mt-10 py-4">
             <h1 className="font-inter font-semibold text-h5 text-bl-900">
               Your Cart
             </h1>
@@ -91,9 +88,11 @@ const Cart = () => {
                       }
                       className="h-10 w-20 flex justify-center items-center  cursor-pointer"
                     >
-                      <img src="/src/icons/Minus.png" alt=""/>
+                      <img src="/src/icons/Minus.png" alt="" />
                     </button>
-                    <span className="w-fit font-inter font-medium text-p1 text-bl-800">{item.quantity}</span>
+                    <span className="w-fit font-inter font-medium text-p1 text-bl-800">
+                      {item.quantity}
+                    </span>
                     <button
                       onClick={() =>
                         dispatch(CartSlice.actions.incrementQuantity(item.id))
@@ -123,7 +122,9 @@ const Cart = () => {
           <div className="flex flex-col gap-3">
             <div className="flex flex-row justify-between">
               <h1 className="font-inter text-bl-500">Subtotal</h1>
-              <h1 className="font-inter text-p1 text-bl-900">{`$ ${orderSubTotal.toFixed(2)}`}</h1>
+              <h1 className="font-inter text-p1 text-bl-900">{`$ ${orderSubTotal.toFixed(
+                2
+              )}`}</h1>
             </div>
             <div className="flex flex-row justify-between">
               <h1 className="font-inter text-bl-500">Shipping</h1>
@@ -131,12 +132,16 @@ const Cart = () => {
             </div>
             <div className="flex flex-row justify-between">
               <h1 className="font-inter text-bl-500">Tax</h1>
-              <h1 className="font-inter text-p1 text-bl-900">{`$ ${tax.toFixed(2)}`}</h1>
+              <h1 className="font-inter text-p1 text-bl-900">{`$ ${tax.toFixed(
+                2
+              )}`}</h1>
             </div>
             <hr className="text-bl-100 w-full"></hr>
             <div className="flex flex-row justify-between">
               <h1 className="font-inter text-p1 text-bl-900">Total</h1>
-              <h1 className="font-inter text-h6 text-bl-900">{`$ ${(tax + orderSubTotal).toFixed(2)}`}</h1>
+              <h1 className="font-inter text-h6 text-bl-900">{`$ ${(
+                tax + orderSubTotal
+              ).toFixed(2)}`}</h1>
             </div>
             <div>
               <SignedIn>
@@ -160,6 +165,12 @@ const Cart = () => {
                 </Link>
               </SignedOut>
             </div>
+            <Link
+              to={"/products"}
+              className="text-center text-l1 text-bl-900 underline font-inter"
+            >
+              Continue Shopping
+            </Link>
           </div>
         </div>
       </div>

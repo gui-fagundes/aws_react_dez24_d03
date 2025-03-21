@@ -3,13 +3,14 @@ import api from "../services/api";
 import Card from "./Card";
 
 
+
 const Cards = () => {
   const [products, setProducts] = useState([]);
 
 
   const getProducts = async () => {
-    const response = await api.get("/products?inStock=true&_limit=4");
-    return response.data;
+      const response = await api.get("/products?inStock=true&_limit=4");
+      return response.data;
   };
 
   useEffect(() => {
