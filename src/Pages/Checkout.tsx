@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import BreadCrumbs from "../components/BreadCrumbs";
 import { useEffect, useState } from "react";
 import { SignedIn, useUser } from "@clerk/clerk-react";
@@ -26,6 +26,8 @@ const Checkout = () => {
   const products = useAppSelector((state) => state.cart.items);
   const orderSubTotal = useAppSelector((state) => state.cart.subTotal);
   const [tax, setTaxes] = useState(orderSubTotal * 0.05);
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     setTaxes(orderSubTotal * 0.05);
@@ -77,6 +79,7 @@ const Checkout = () => {
     await products.map((product) => {
       history.push({
         productId : product.productId,
+        productTitle : product.title,
         productImg : product.imagesUrl[0],
         productQuantity : product.quantity,
         productPrice : (product.price * product.quantity),
@@ -87,7 +90,8 @@ const Checkout = () => {
     ;
     api.patch(`/OrderHistory/${user?.primaryEmailAddress?.emailAddress}`, {
       history: history
-    })  
+    })
+    navigate('/sucessfullOrder')
   }
 
 
