@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
 import BreadCrumbs from "../components/BreadCrumbs";
 import { useNavigate } from "react-router-dom";
-import { useSignIn, useUser } from "@clerk/clerk-react";
+import { useSignIn } from "@clerk/clerk-react";
 
 const PasswordReset = () => {
   const [email, setEmail] = useState("");
