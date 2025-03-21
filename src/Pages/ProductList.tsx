@@ -33,6 +33,7 @@ const ProductList = () => {
             `/products?price_lt=${priceValue}&_page=${page}&_per_page=9`
           );
           setProducts(response.data.data);
+          setPage(1)
           const size = await api.get(`/products?price_lt=${priceValue}`);
           setMaxProducts(size.data.length);
           const price = await api.get('/products?_sort=-price&_limit=1');
@@ -42,6 +43,7 @@ const ProductList = () => {
             `/products?category=${checkedValue}&price_lt=${priceValue}&_page=${page}&_per_page=9`
           );
           setProducts(response.data.data);
+          setPage(1)
           const size = await api.get(
             `/products?category=${checkedValue}&price_lt=${priceValue}`
           );
